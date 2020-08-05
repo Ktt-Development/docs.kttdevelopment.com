@@ -1,4 +1,4 @@
 # Wiki
 
-- [SimpleHttpServer](simplehttpserver)]
+- [SimpleHttpServer](simplehttpserver)
 - [WebDir](webdir)
