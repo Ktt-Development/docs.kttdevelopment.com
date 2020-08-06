@@ -193,14 +193,15 @@ div.highlight pre.highlight {
         text-decoration: none !important;
     }
 //
-    .o { // symbols ; () []
+    .o, .p { // symbols ; () []
         color: #89DDFF !important;
         font-weight: normal !important;
         text-decoration: none !important;
     }
 // 
     .s, .sr, // string, regex
-    .sb, .sc, .sd, .s2, .se, .sh, .si, .sx { // literal
+    .sb, .sc, .sd, .s2, .se, .sh, .si, .sx,
+    .nl { // literal
       color: #C3E88D !important;
       font-weight: normal !important;
     }
