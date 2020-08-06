@@ -20,7 +20,7 @@ SimpleHttpServer server = SimpleHttpServer.create(8080);
 SimpleHttpServer server = SimpleHttpServer.create(new InetSocketAddress(8080));
 ```
 
-If the server is not binded at instantiation then it must be binded using the bind method.
+If the server is not binded at instantiation then it must be binded using the `bind` method.
 ```java
 SimpleHttpServer server = SimpleHttpServer.create();
 server.bind(8080);
@@ -37,15 +37,16 @@ If the port that the server is currently using is already occupied by another pr
 <!-- start -->
 ## Start
 
-The server can be started using the start method. The server can not be started unless it is binded to a valid port.
+The server can be started using the `start` method. The server can not be started unless it is binded to a valid port.
 ```java
 SimpleHttpServer server = SimpleHttpServer.create(8080);
 server.start();
 ```
 
+<!-- stop -->
 ## Stopping The Server
 
-The server can be stopped using the stop method. This will stop all inbount requests and currently active exchanges. An optional Integer parameter can also be supplied to specify how long to wait for current exchanges to complete before closing the server.
+The server can be stopped using the `stop` method. This will stop all inbount requests and currently active exchanges. An optional Integer parameter can also be supplied to specify how long to wait for current exchanges to complete before closing the server.
 
 ```java
 SimpleHttpServer server = SimpleHttpServer.create(8080);
