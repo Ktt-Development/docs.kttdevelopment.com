@@ -2,6 +2,7 @@
 ---
 
 @import "{{ site.theme }}";
+@import "code";
 
 @font-face {
   font-family: 'Lexend Deca';
@@ -16,7 +17,7 @@ header div.inner h2 {
     width: unset;
 }
 
-a, a:focus {
+summary {
     outline: none;
 }
 
