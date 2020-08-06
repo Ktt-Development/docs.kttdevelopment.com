@@ -16,4 +16,4 @@ For projects built locally, compiled binaries can be found in releases.
 
 Online documentation is only available for versions 03.03.00 or higher.
 
-[Documentation]("https://docs.kttdevelopment.com/simplehttpserver")
+[Documentation](https://docs.kttdevelopment.com/simplehttpserver)
