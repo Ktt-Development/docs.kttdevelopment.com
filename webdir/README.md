@@ -9,12 +9,12 @@ Web Dir is an extensible site generator and file explorer. Built with JDK11.
 ## Generator / Server
 
 WebDir Generator & Server executables can be found in releases.
-[<img align="right" src="https://img.shields.io/github/v/release/ktt-development/webdir?color=44cc11&include_prereleases">](https://github.com/Ktt-Development/webdir/release)
+[<img align="right" src="https://img.shields.io/github/v/release/ktt-development/webdir?color=44cc11&include_prereleases">](https://github.com/Ktt-Development/webdir/releases)
 
 ## API
 
 For projects built locally, compiled binaries can be found in releases.
-[<img align="right" src="https://img.shields.io/github/v/release/ktt-development/webdir?color=44cc11&include_prereleases">](https://github.com/Ktt-Development/webdir/release)
+[<img align="right" src="https://img.shields.io/github/v/release/ktt-development/webdir?color=44cc11&include_prereleases">](https://github.com/Ktt-Development/webdir/releases)
 
 For projects using Maven or Gradle compiled binaries are posted on JitPack.
 [<img align="right" src="https://jitpack.io/v/com.kttdevelopment/webdir.svg">](https://jitpack.io/#com.kttdevelopment/webdir)
