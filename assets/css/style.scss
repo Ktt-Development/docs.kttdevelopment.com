@@ -51,11 +51,19 @@ h{
     }
 }
 
-:not(.inner) a[href], a[href]:visited{
+a[href], a[href]:visited{
     color: #3278be !important;
     transition: color .15s ease-in-out !important;
     &:hover{
         color: #25598e !important;
+    }
+}
+
+div.inner a[href], a[href]:visited{
+    color: white !important;
+    transition: color .15s ease-in-out !important;
+    &:hover{
+        color: #3278be !important;
     }
 }
 
