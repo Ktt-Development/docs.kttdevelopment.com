@@ -38,7 +38,7 @@ code, pre {
         font-style: italic !important;
     }
 //
-    .mf, .mh, .mi, .mo { // float/int
+    .m, .mf, .mh, .mi, .mo { // float/int
       color: #F78C6C !important;
     }
 //
@@ -79,6 +79,7 @@ code, pre {
       color: #C3E88D !important;
     }
 
+    /* unused
     .gd { // deleted
       color: #aa0000;
     }
@@ -119,10 +120,6 @@ code, pre {
 
     .gt { // traceback
       color: #aa0000;
-    }
-
-    .m { // number
-      color: #009999;
     }
 
     .nb { // bultin
@@ -170,4 +167,5 @@ code, pre {
     .il { // num/int/ling
       color: #009999;
     }
+    */
 }
