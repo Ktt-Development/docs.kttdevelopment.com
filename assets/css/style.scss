@@ -3,7 +3,20 @@
 
 @import "{{ site.theme }}";
 
-a {
+@font-face {
+  font-family: 'Lexend Deca';
+  src: url(LexendDeca.ttf);
+}
+
+p, h1, h2, h3, h4, h5, h6, a {
+    font-family: 'Lexend Deca' !important;
+}
+
+header div.inner h2 {
+    width: unset;
+}
+
+a, a:focus {
     outline: none;
 }
 

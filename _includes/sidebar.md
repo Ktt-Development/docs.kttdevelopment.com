@@ -55,12 +55,15 @@
             </li>
         <ul>
     </details>
-    <ul>
-        <li>
-            <a href="/simplehttpserver/cookies">Cookies</a>
-        </li>
-        <li>
-            <a href="/simplehttpserver/http-session">Http Session</a>
-        </li>
-    </ul>
+    <details open>
+        <summary>Other Features</summary>
+        <ul>
+            <li>
+                <a href="/simplehttpserver/cookies">Cookies</a>
+            </li>
+            <li>
+                <a href="/simplehttpserver/http-session">Http Session</a>
+            </li>
+        </ul>
+    </details>
 </details>
