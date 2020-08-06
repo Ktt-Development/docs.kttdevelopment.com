@@ -12,7 +12,15 @@ p, h1, h2, h3, h4, h5, h6, a {
     font-family: 'Lexend Deca' !important;
 }
 
-a[href], a[href]:visited{
+h{
+    &1, &2, &3, &4, &5, &6 {
+        &:before{
+            color: #3278be;
+        }   
+    }  
+}
+
+:not(.inner) > a[href], a[href]:visited{
     color: #3278be !important;
     transition: color .15s ease-in-out !important;
     &:hover{
@@ -48,7 +56,7 @@ details > ul {
 }
 
 a code, a:visited code {
-    @extend a[href]
+    @extend a[href];
 }
 
 code{
