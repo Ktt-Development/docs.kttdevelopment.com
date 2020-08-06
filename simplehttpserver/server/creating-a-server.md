@@ -35,7 +35,7 @@ Note that the server can only be binded to a port once. You must create a new se
 If the port that the server is currently using is already occupied by another process then a [`BindException`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html) will be thrown.
 
 <!-- start -->
-## Start
+## Starting The Server
 
 The server can be started using the `start` method. The server can not be started unless it is binded to a valid port.
 ```java
