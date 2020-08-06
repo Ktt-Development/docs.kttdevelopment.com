@@ -1,14 +1,34 @@
-## [SimpleHttpServer](/simplehttpserver)
+# [SimpleHttpServer](/simplehttpserver)
 
 <details>
-    <summary>[Server](/simplehttperver/server)</summary>
-    - [Creating A Server](/simplehttpserver/server/creating-a-server)
-    - [Accessing The Server](/simplehttpserver/server/accessing-the-server)
-    - [Adding Pages](/simplehttpserver/server/adding-pages)
-    - [Multithreaded Server](/simplehttpserver/server/multithreaded-server)
+    <summary>
+        <a href="/simplehttpserver/server">Server</a>
+    </summary>
+    <ul>
+        <li>
+            <a href="/simplehttpserver/server/creating-a-server">Creating A Server</a>
+        </li>
+        <li>
+            <a href="/simplehttpserver/server/accessing-the-server">Accessing The Server</a>
+        </li>
+        <li>
+            <a href="/simplehttpserver/server/adding-pages">Adding Pages</a>
+        </li>
+        <li>
+            <a href="/simplehttpserver/server/multithreaded-server">Multithreaded Server</a>
+        </li>
+    </ul>
 </details>
 <details>
-    <summary>[Handlers](/simplehttpserver/handler</summary>
-    - [Http Exchange](/simplehttpserver/handler/simple-http-exchange)
+    <summary>
+        <a href="/simplehttpServer/handler">Handler</a>
+    </summary>
+    <ul>
+        <li>
+            <a href="/simplehttpserver/handler/simple-http-exchange">Http Exchange</a>
+        <li>
+    <ul>
 </details>
+
+# [WebDir](/webdir)
     
