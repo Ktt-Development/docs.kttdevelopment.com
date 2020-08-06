@@ -116,4 +116,8 @@ The headers are sent with a response code. More information on these codes can b
 <!-- send -->
 ## Sending Data
 
-🚧 wip 
+Data can be sent to the user using any of the `send` methods. The send method can send data using String or byte arrays.
+
+An optional boolean parameter can be used to compress files into [gzip](https://en.wikipedia.org/wiki/Gzip) files for faster exchanges.
+
+When you are done you must use the `close` method in the exchange.
