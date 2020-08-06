@@ -53,7 +53,7 @@
             <li>
                 <a href="/simplehttpserver/handler/throttled-handler">Throttled Handler</a>
             </li>
-        <ul>
+        </ul>
     </details>
     <details open>
         <summary>Other Features</summary>
