@@ -12,6 +12,14 @@ p, h1, h2, h3, h4, h5, h6, a {
     font-family: 'Lexend Deca' !important;
 }
 
+a[href], a[href]:visited{
+    color: #3278be !important;
+    transition: color .15s ease-in-out !important;
+    &:hover{
+        color: #25598e !important;
+    }
+}
+
 header div.inner h2 {
     width: unset;
 }
@@ -37,6 +45,16 @@ details > ul {
 @font-face {
   font-family: 'Fira Code';
   src: url(FiraCode.ttf);
+}
+
+a code {
+    color: #FFCB6B !important;
+}
+
+code{
+    border: none !important;
+    font-weight: bold !important;
+    background-color: transparent !important;
 }
 
 code, pre {
