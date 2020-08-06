@@ -67,3 +67,24 @@
         </ul>
     </details>
 </details>
+
+<hr>
+
+<details open>
+    <summary>
+        <a href="/webdir">WebDir</a>
+    </summary>
+    <details open>
+        <summary>Web Dir API</summary>
+        <ul>
+        </ul>
+    </details>
+    <ul>
+        <li>
+        Web Dir Generator
+        </li>
+        <li>
+        Web Dir Server
+        </li>
+    </ul>
+</details>
