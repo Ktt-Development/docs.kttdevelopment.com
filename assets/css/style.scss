@@ -3,6 +3,10 @@
 
 @import "{{ site.theme }}";
 
+a {
+    outline: none;
+}
+
 details > details {
     margin-left: 20px;
 }
@@ -11,6 +15,6 @@ details > ul {
     margin-top: 0px;
 }
 
-#sidebar > details {
+#sidebar > details summary {
     font-size: 20px;
 }

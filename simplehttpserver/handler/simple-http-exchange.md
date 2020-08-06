@@ -23,19 +23,19 @@ If a user sends a `GET` request the server will return a map of the keys and val
 
 SimpleHttpHandler handler = new SimpleHttpHandler(){
 
-        @Override
-        public void handle(SimpleHttpExchange exchange){
-            Map GET = exchange.getGetMap();
-            /*
-            This returns a map:
-            {
-                "exampleKey": "exampleValue",
-                "anotherKey": "anotherValue"
-            }
-            */
+    @Override
+    public void handle(SimpleHttpExchange exchange){
+        Map GET = exchange.getGetMap();
+        /*
+        This returns a map:
+        {
+            "exampleKey": "exampleValue",
+            "anotherKey": "anotherValue"
         }
+        */
+    }
 
-}
+};
 ```
 
 <!-- post -->
@@ -49,19 +49,19 @@ If a user sends a `POST` request the server will return a map of the keys and va
 
 SimpleHttpHandler handler = new SimpleHttpHandler(){
 
-        @Override
-        public void handle(SimpleHttpExchange exchange){
-            Map POST = exchange.getPostMap();
-            /*
-            This returns a map:
-            {
-                "exampleKey": "exampleValue",
-                "anotherKey": "anotherValue"
-            }
-            */
+    @Override
+    public void handle(SimpleHttpExchange exchange){
+        Map POST = exchange.getPostMap();
+        /*
+        This returns a map:
+        {
+            "exampleKey": "exampleValue",
+            "anotherKey": "anotherValue"
         }
+        */
+    }
 
-}
+};
 ```
 
 ### multipart/form-data

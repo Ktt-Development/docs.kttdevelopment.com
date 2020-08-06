@@ -37,7 +37,7 @@ server.createContext(
         }
 
     }
-)
+);
 ```
 
 <!-- issue -->
@@ -64,5 +64,5 @@ HttpHandler handler = new HttpHandler(){
         }
     }
 
-}
+};
 ```

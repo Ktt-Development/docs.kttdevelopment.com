@@ -30,4 +30,4 @@ Contexts in a Http Server are acase sensetive and will use the most specific con
 
 This consequently means that any handler added to the root `/` context would handler any requests that don't have a handler, since its the most specific one available.
 
-To resolve this issue the libary provides a [root handler](/simplehttpserver/handler/root-handler).
+To resolve this issue the libary provides a [root handler](/simplehttpserver/handler/predicate-handler#root-handler).
