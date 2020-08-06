@@ -41,7 +41,11 @@ details > ul {
 
 code, pre {
     font-family: 'Fira Code' !important;
+}
+
+div.highlight pre.highlight {
     background-color: #212121 !important;
+    border-radius: 6px;
 }
 
 .highlight {
@@ -70,6 +74,7 @@ code, pre {
     .k, .kc, .kd, .kn, .kp, .kr, .kt { // keyword (class/import) / scope access
         color: #C792EA !important;
         font-style: italic !important;
+        font-weight: none !important;
     }
 //
     .m, .mf, .mh, .mi, .mo { // float/int
@@ -91,11 +96,13 @@ code, pre {
 
     .nc { // class
       color: #FFCB6B !important;
-      text-decoration: underline !important;
+      font-weight: normal !important;
+      text-decoration: none !important;
     }
 
     .nd { // annoation
       color: #C792EA !important;
+      font-weight: none !important;
     }
 
     .nn { // import / namespace
@@ -105,6 +112,7 @@ code, pre {
 //
     .o { // symbols ; () []
         color: #89DDFF !important;
+        font-weight: none !important;
         text-decoration: none !important;
     }
 // 
