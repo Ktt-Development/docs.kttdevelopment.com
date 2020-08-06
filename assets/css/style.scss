@@ -47,8 +47,8 @@ details > ul {
   src: url(FiraCode.ttf);
 }
 
-a code {
-    color: #FFCB6B !important;
+a code, a:visited code {
+    @extend a[href]
 }
 
 code{
@@ -74,6 +74,7 @@ div.highlight pre.highlight {
     .c, .c1, .cm, .cp { // comment
         color: #616161 !important;
         font-style: italic !important;
+        font-weight: normal !important;
     }
 
     .cs { // comment special
@@ -92,7 +93,7 @@ div.highlight pre.highlight {
     .k, .kc, .kd, .kn, .kp, .kr, .kt { // keyword (class/import) / scope access
         color: #C792EA !important;
         font-style: italic !important;
-        font-weight: none !important;
+        font-weight: normal !important;
     }
 //
     .m, .mf, .mh, .mi, .mo { // float/int
@@ -101,15 +102,16 @@ div.highlight pre.highlight {
 //
     .n { // var
         color: #EEFFFF !important;
+        font-weight: normal !important;
     }
 
-    .na, .no { // constant, type
+    .no { //, type
         color: #F78C6C !important;
     } 
 
-    .nf { // function
+    .na, .nf { // function
       color: #82AAFF !important;
-      font-weight: bold !important;
+      font-weight: normal !important;
     }
 
     .nc { // class
@@ -120,7 +122,7 @@ div.highlight pre.highlight {
 
     .nd { // annoation
       color: #C792EA !important;
-      font-weight: none !important;
+      font-weight: normal !important;
     }
 
     .nn { // import / namespace
@@ -130,13 +132,14 @@ div.highlight pre.highlight {
 //
     .o { // symbols ; () []
         color: #89DDFF !important;
-        font-weight: none !important;
+        font-weight: normal !important;
         text-decoration: none !important;
     }
 // 
     .s, .sr, // string, regex
     .sb, .sc, .sd, .s2, .se, .sh, .si, .sx { // literal
       color: #C3E88D !important;
+      font-weight: normal !important;
     }
 
     /* unused
