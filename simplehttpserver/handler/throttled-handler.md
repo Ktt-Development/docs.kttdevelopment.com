@@ -81,7 +81,7 @@ server.createContext("/", new ThrottledHandler(handler, throttler));
 <!-- session -->
 # Session Throttler
 
-**This handler will only function with a [SimpleHttpServer](/simplehttpserver/server/creating-a-server).**
+**This handler will only function with a [SimpleHttpServer](/simplehttpserver/server).**
 
 The session throttler limits the amount of simultaneous connections a single session can have. This limit is determined by the `getMaxConnections` method in the throttler.
 

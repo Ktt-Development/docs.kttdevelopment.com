@@ -8,7 +8,7 @@
         </summary>
         <ul>
             <li>
-                <a href="/simplehttpserver/server/creating-a-server">Creating A Server</a>
+                <a href="/simplehttpserver/server">Creating A Server</a>
             </li>
             <li>
                 <a href="/simplehttpserver/server/accessing-the-server">Accessing The Server</a>
@@ -81,10 +81,10 @@
     </details>
     <ul>
         <li>
-        Web Dir Generator
+            <a href="/webdir/generator">Web Dir Generator</a>
         </li>
         <li>
-        Web Dir Server
+            <a href="/webdir/server">Web Dir Server</a>
         </li>
     </ul>
 </details>
