@@ -16,11 +16,42 @@ h{
     &1, &2, &3, &4, &5, &6 {
         &:before{
             color: #3278be;
+    
         }   
     }  
+    &1:before{
+        padding-right: 0.3em;
+        margin-left: -0.9em;
+        content: "/";
+    }
+    &2:before{
+        padding-right: 0.3em;
+        margin-left: -1.5em;
+        content: "//";
+    }
+    &3:before{
+        padding-right: 0.3em;
+        margin-left: -2em;
+        content: "///";
+    }
+    &4:before{
+        padding-right: 0.3em;
+        margin-left: -2.8em;
+        content: "////"
+    }
+    &5:before{
+        padding-right: 0.3em;
+        margin-left: -3.2em;
+        content: "/////";
+    }
+    &6:before{
+        padding-right: 0.3em;
+        margin-left: -3.7em;
+        content: "//////";
+    }
 }
 
-:not(.inner) > a[href], a[href]:visited{
+:not(.inner) a[href], a[href]:visited{
     color: #3278be !important;
     transition: color .15s ease-in-out !important;
     &:hover{
