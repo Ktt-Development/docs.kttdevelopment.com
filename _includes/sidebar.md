@@ -1,6 +1,6 @@
 <details open>
     <summary>
-        <a href="/simplehttpserver">Simple Http&nbsp;Server</a>
+        <a href="/simplehttpserver">Simple Http Server</a>
     </summary>
     <details open>
         <summary>
