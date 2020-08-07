@@ -23,7 +23,6 @@ public class Plugin extends WebDirPlugin {
     }
 
 }
-
 ```
 
 ## Plugin.yml

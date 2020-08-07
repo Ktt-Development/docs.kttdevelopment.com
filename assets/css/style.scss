@@ -101,7 +101,7 @@ details > {
 }
 
 #sidebar > details summary {
-    font-size: 19px;
+    font-size: 18px;
 }
 
 // code
@@ -195,7 +195,7 @@ div.highlight pre.highlight {
         text-decoration: none !important;
     }
 //
-    .o, .p { // symbols ; () []
+    .o, .p, .pi { // symbols ; () []
         color: #89DDFF !important;
         font-weight: normal !important;
         text-decoration: none !important;

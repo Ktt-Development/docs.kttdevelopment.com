@@ -75,18 +75,53 @@
         <a href="/webdir">WebDir</a>
     </summary>
     <details open>
-        <summary>Web Dir API</summary>
+        <summary>
+            <a href="/webdir/api">Web Dir API</a>
+        </summary>
         <ul>
+            <li>
+                <a href="/webdir/api/plugin-service">Plugin Service</a>
+            </li>
+            <li>
+                <a href="/webdir/api/configuration">Configuration</a>
+            </li>
+            <li>
+                <a href="/webdir/api/locale">Locale</a>
+            </li>
+            <li>
+                <a href="/webdir/api/renderer">Renderer</a>
+            </li>
+            <li>
+                <a href="/webdir/api/dependencies">Using Other Plugins</a>
+            </li>
         </ul>
     </details>
-    <ul>
-        <li>
+    <details open>
+        <summary>
             <a href="/webdir/generator">Web Dir Generator</a>
-        </li>
-        <li>
-            <a href="/webdir/server">Web Dir Server</a>
-        </li>
-    </ul>
+        </summary>
+        <ul>
+            <li>
+                <a href="/webdir/generator/front-matter">Front Matter</a>
+            </li>
+            <li>
+                <a href="/webdir/generator/defaults">Defaults</a>
+            </li>
+        </ul>
+    </details>
+    <details open>
+        <summary>
+            <a href="/webdir/server">Web Dir Server</a> 
+        </summary>
+        <ul>
+            <li>
+                <a href="/webdir/server/files">File Explorer</a>
+            </li>
+            <li>
+                <a href="/webdir/server/permissions">Permissions</a>
+            </li>
+        </ul>
+    </details>
 </details>
 
 <hr>
