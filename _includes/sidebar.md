@@ -76,7 +76,7 @@
     </summary>
     <details open>
         <summary>
-            <a href="/webdir/api">Web Dir API</a>
+            <a href="/webdir/api">API</a>
         </summary>
         <ul>
             <li>
@@ -98,7 +98,7 @@
     </details>
     <details open>
         <summary>
-            <a href="/webdir/generator">Web Dir Generator</a>
+            <a href="/webdir/generator">Generator</a>
         </summary>
         <ul>
             <li>
@@ -111,7 +111,7 @@
     </details>
     <details open>
         <summary>
-            <a href="/webdir/server">Web Dir Server</a> 
+            <a href="/webdir/server">Server</a> 
         </summary>
         <ul>
             <li>
