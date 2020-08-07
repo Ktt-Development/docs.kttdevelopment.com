@@ -94,14 +94,20 @@ details > {
     details {
         margin-left: 20px;
     }
-    ul {
-        margin-top: 0px;
-        margin-bottom: 0px !important;
-    }
 }
 
 #sidebar > details summary {
     font-size: 18px;
+}
+
+details{
+    margin-bottom: 10px;
+}
+
+ul {
+    margin-top: 0px;
+    margin-bottom: 0px !important;
+    padding-left: 40px;
 }
 
 // code
