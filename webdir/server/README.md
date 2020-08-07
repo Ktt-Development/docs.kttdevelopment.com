@@ -1,6 +1,6 @@
 # Web Dir Server
 
-The Web Dir Server deploys a dynamic website from templates and [renderers](/webdir/api/renderers).
+The Web Dir Server deploys a dynamic website from templates and [renderers](/webdir/api/renderer).
 
 ## Configuration
 

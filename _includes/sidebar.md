@@ -72,7 +72,7 @@
 
 <details open>
     <summary>
-        <a href="/webdir">WebDir</a>
+        <a href="/webdir">Web Dir</a>
     </summary>
     <details open>
         <summary>

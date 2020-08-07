@@ -128,7 +128,7 @@ public class PluginRenderer implements FileRendererAdapter{
 }
 ```
 
-The renderer can only be accessed in [defaults](/webdir/generator/defaults) under the `exchangeRenderers` setting in [front matter](/webdir/generator/front-matter).
+The renderer can only be accessed in [defaults](/webdir/generator/defaults#file-defaults) under the `exchangeRenderers` setting in [front matter](/webdir/generator/front-matter).
 
 ```yml
 ---
