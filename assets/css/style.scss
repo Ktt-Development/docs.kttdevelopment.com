@@ -9,7 +9,7 @@
 }
 
 p, h1, h2, h3, h4, h5, h6, a, th, td {
-    font-family: 'Lexend Deca' !important;
+    font-family: 'Lexend Deca', Arial, Helvetica, sans-serif !important;
 }
 
 h{
@@ -73,6 +73,10 @@ header div.inner{
         margin-right: 200px !important;
     }
 
+    h2 {
+        width: unset !important;
+    }
+
     h{
         &1, &2, &3, &4, &5, &6 {
             &:before{
@@ -82,20 +86,18 @@ header div.inner{
     }
 }
 
-header div.inner h2 {
-    width: unset;
-}
-
 summary {
     outline: none;
 }
 
-details > details {
-    margin-left: 20px;
-}
-
-details > ul {
-    margin-top: 0px;
+details > {
+    details {
+        margin-left: 20px;
+    }
+    ul {
+        margin-top: 0px;
+        margin-bottom: 0px !important;
+    }
 }
 
 #sidebar > details summary {
@@ -120,15 +122,14 @@ code{
 }
 
 code, pre {
-    font-family: 'Fira Code' !important;
+    font-family: 'Fira Code', "Courier New", Courier, monospace !important;
 }
 
 div.highlight pre.highlight {
     background-color: #212121 !important;
     border-radius: 6px;
-}
 
-.highlight {
+
     .hll { // background
         background-color: transparent !important;
     }
@@ -206,94 +207,4 @@ div.highlight pre.highlight {
       color: #C3E88D !important;
       font-weight: normal !important;
     }
-
-    /* unused
-    .gd { // deleted
-      color: #aa0000;
-    }
-
-    .ge { // emph
-      font-style: italic;
-    }
-
-    .gr { // error
-      color: #aa0000;
-    }
-
-    .gh { // heading
-      color: #000080;
-      font-weight: bold;
-    }
-
-    .gi { // inserted
-      color: #00aa00;
-    }
-
-    .go { // output
-      color: #888888;
-    }
-
-    .gp { // prompt
-      color: #555555;
-    }
-
-    .gs { // strong
-      font-weight: bold;
-    }
-
-    .gu { // subheading
-      color: #800080;
-      font-weight: bold;
-    }
-
-    .gt { // traceback
-      color: #aa0000;
-    }
-
-    .nb { // bultin
-      color: #00aaaa;
-    }
-
-    .ni { // entity
-      color: #800000;
-      font-weight: bold;
-    }
-
-    .nt { // tag
-      color: #1e90ff;
-      font-weight: bold;
-    }
-
-    .nv { // var
-      color: #aa0000;
-    }
-
-    .ow { // word
-      color: #0000aa;
-    }
-
-    .w { // whitespace
-      color: #bbbbbb;
-    }
-
-    .s1 { // single
-      color: #aa5500;
-    }
-
-    .ss { // symbol
-      color: #0000aa;
-    }
-
-    .bp { // psuedo
-      color: #00aaaa;
-    }
-
-    .vc, .vg, .vi { // class
-      color: #aa0000;
-    }
-
-    .il { // num/int/ling
-      color: #009999;
-    }
-    */
 }
