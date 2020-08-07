@@ -92,7 +92,7 @@
                 <a href="/webdir/api/renderer">Renderer</a>
             </li>
             <li>
-                <a href="/webdir/api/dependencies">Using Other Plugins</a>
+                <a href="/webdir/api/using-other-plugins">Using Other Plugins</a>
             </li>
         </ul>
     </details>
