@@ -6,7 +6,7 @@ A renderer determines how content will appear based on the template and any prev
 public class PluginRenderer implements Renderer{
 
     @Override
-    String renderer(File output, ConfigurationSection yamlFrontMatter, String content){
+    String renderer(File input, File output, ConfigurationSection yamlFrontMatter, String content){
         return content;
     }
 
@@ -60,12 +60,12 @@ An exchange renderer inherits all the features of a renderer and extends these f
 public class PluginRenderer implements ExchangeRendererAdapter{
 
     @Override
-    String renderer(File output, ConfigurationSection yamlFrontMatter, String content){
+    String renderer(File input, File output, ConfigurationSection yamlFrontMatter, String content){
         return content;
     }
 
     @Override
-    String renderer(SimpleHttpExchange exchange, File source, ConfigurationSection yamlFrontMatter, String content){
+    String renderer(SimpleHttpExchange exchange, File input, File source, ConfigurationSection yamlFrontMatter, String content){
         return content;
     }
 
@@ -116,12 +116,12 @@ An exchange renderer inherits all the features of a renderer and extends these f
 public class PluginRenderer implements FileRendererAdapter{
 
     @Override
-    String renderer(File output, ConfigurationSection yamlFrontMatter, String content){
+    String renderer(File input, File output, ConfigurationSection yamlFrontMatter, String content){
         return content;
     }
 
     @Override
-    String renderer(SimpleHttpExchange exchange, File source, ConfigurationSection yamlFrontMatter, byte[] bytes){
+    String renderer(SimpleHttpExchange exchange, File input, File output, ConfigurationSection yamlFrontMatter, byte[] bytes){
         return new String(bytes);
     }
 
