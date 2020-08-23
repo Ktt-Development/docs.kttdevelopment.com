@@ -1,3 +1,5 @@
+---
+---
 # Web Dir Generator
 
 The Web Dir Generator generates pages from templates and [renderers](/webdir/api/renderer).

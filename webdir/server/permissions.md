@@ -1,3 +1,5 @@
+---
+---
 # Permissions
 
 Permissions are used to set access to the server and determines which renderers can be used, if the renderer has a required permission.

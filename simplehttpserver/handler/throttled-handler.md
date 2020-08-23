@@ -1,3 +1,5 @@
+---
+---
 # Throttled Handler
 
 The throttled handler limits the amount of simultaneous connections to a handler. The handler requires a `ConnectionThrottler`, which determines how to allocate the connections.

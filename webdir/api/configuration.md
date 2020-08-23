@@ -1,3 +1,5 @@
+---
+---
 # Configuration
 
 A configuration can be created using the `createConfiguration` method in the plugin which returns a `ConfigurationSecton`. This can not be saved.

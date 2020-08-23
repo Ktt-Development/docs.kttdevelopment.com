@@ -1,2 +1,16 @@
+livereload: true
+
 title: Ktt Development Wiki
-theme: jekyll-theme-architect
+
+defaults:
+  - scope:
+      path: "*.md"
+    values:
+      layout: "wiki"
+  - scope:
+      path: "*.html"
+    values:
+      layout: "default"
+exclude:
+  - "*."
+  - "*.bat"

@@ -1,3 +1,5 @@
+---
+---
 # Redirect Handler
 
 This handler redirects the user to a different page, without saving the redirect url to the history. 
