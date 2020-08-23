@@ -1,0 +1,19 @@
+<ul id="breadcrumb" class="nav nav-tabs">
+    {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+        <li class="nav-item">{% if page.url != "/" %}<a class="nav-link" href="/">{% endif%}Home</a></li>
+    {% for crumb in crumbs offset: 1 %}
+            {% assign crumb_limit = forloop.index | plus: 1 %}
+            {% capture url %}
+            {% for crumb in crumbs limit: crumb_limit %}
+                {{ crumb }}
+            {% endfor %}
+            {% endcapture %}
+            {% capture head %}
+                <a class="nav-link{% if forloop.last %} active{% endif %}" href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | remove:'.html'}}{% if forloop.last == false %}/{% endif %}{% endfor %}">
+            {% endcapture %}
+            {% capture foot %}
+                </a>
+            {% endcapture %}
+        <li class="nav-item">{{ head }}{{ crumb | replace:'-',' ' | remove:'.html' }}{{ foot }}</li>
+    {% endfor %}
+</ul>

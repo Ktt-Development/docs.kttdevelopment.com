@@ -1,16 +1,14 @@
 livereload: true
+timezone: America/New_York
 
 title: Ktt Development Wiki
 
 defaults:
   - scope:
-      path: "*.md"
-    values:
-      layout: "wiki"
-  - scope:
-      path: "*.html"
+      path: ""
     values:
       layout: "default"
 exclude:
-  - "*."
+  - "CNAME"
+  - "LICENSE"
   - "*.bat"

@@ -29,3 +29,25 @@ code, pre{
 body{
     background-color: $color-white;
 }
+
+// breadcrumb
+
+#breadcrumb{
+    li.nav-item{
+        a.nav-link{
+            transition: all 0.25s ease-in-out;
+            padding: .25rem;
+            padding-left: .5rem;
+            padding-right: .5rem;
+            &:hover{
+                background-color: white;
+            }
+        }
+    }
+}
+
+// footer
+.footer{
+    color: white;
+    background-color: $color-dark;
+}

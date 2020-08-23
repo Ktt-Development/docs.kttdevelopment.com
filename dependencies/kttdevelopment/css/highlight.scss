@@ -1,11 +1,42 @@
 ---
 ---
 
-div, pre{
-    &.highlight {
-        background-color: #212121 !important;
-        border-radius: 6px;
+div.highlight{
+    background-color: #212121 !important;
+    border-radius: 6px;
+    margin: 0px;
+    overflow: hidden;
+}
 
+pre.highlight {
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,0.2);
+        border-radius: 5px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(255,255,255,0.35);
+    }
+
+    & code {
 
         .hll { // background
             background-color: transparent !important;
