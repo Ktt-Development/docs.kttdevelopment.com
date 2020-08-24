@@ -3,6 +3,7 @@
 
 $color-dark: #202020;
 $color-white: #F3F2F1;
+$color-red: #e04062;
 
 @font-face{
     font-family: 'Lexend Deca';
@@ -48,6 +49,18 @@ a.anchor{
     font-size: 75%;
     top: -2.5px;
     position: relative;
+}
+
+// content
+
+#content{
+    > *{
+        margin-top: 10px;
+    }
+
+    code{
+        color: $color-red;
+    }
 }
 
 // sidebar
