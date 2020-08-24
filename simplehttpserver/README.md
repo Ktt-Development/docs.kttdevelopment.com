@@ -7,10 +7,10 @@ This library simplifies complex operations for both the server, exchange, and ha
 # Setup
 
 For projects using Maven or Gradle compiled binaries are posted on JitPack.
-[<img align="right" src="https://jitpack.io/v/com.kttdevelopment/simplehttpserver.svg">](https://jitpack.io/#com.kttdevelopment/simplehttpserver)
+[![jitpack](https://jitpack.io/v/com.kttdevelopment/simplehttpserver.svg)](https://jitpack.io/#com.kttdevelopment/simplehttpserver)
 
 For projects built locally, compiled binaries can be found in releases.
-[<img align="right" src="https://img.shields.io/github/v/release/ktt-development/simplehttpserver?color=44cc11&include_prereleases">](https://github.com/Ktt-Development/simplehttpserver/release)
+[![releases](https://img.shields.io/github/v/release/ktt-development/simplehttpserver?color=44cc11&include_prereleases")](https://github.com/Ktt-Development/simplehttpserver/release)
 
 # Documentation
 

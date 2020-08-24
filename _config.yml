@@ -1,2 +1,18 @@
+livereload: true
+timezone: America/New_York
+
 title: Ktt Development Wiki
-theme: jekyll-theme-architect
+
+plugins:
+  - jekyll-readme-index
+  - jekyll-optional-front-matter
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+exclude:
+  - "CNAME"
+  - "LICENSE"
+  - "*.bat"
