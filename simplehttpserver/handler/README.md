@@ -1,5 +1,3 @@
----
----
 # Http Handler
 
 An [`HttpHandler`](https://docs.oracle.com/en/java/javase/11/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpHandler.html) is what handles a request when the user accessing a page. This is passed with an [`HttpExchange`](simple-http-exchange) which contains information about the request.

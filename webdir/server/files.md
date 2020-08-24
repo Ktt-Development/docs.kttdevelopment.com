@@ -1,5 +1,3 @@
----
----
 # Files
 
 The Web Dir Server acts as a file explorerer for all drives on the system. Renderers for files can only be set in the [defaults](/webdir/generator/defaults#file-defaults) under the `exchangeRenderers` setting in [front matter](/webdir/generator/front-matter).

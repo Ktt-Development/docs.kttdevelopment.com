@@ -1,5 +1,3 @@
----
----
 # Adding Pages
 
 Pages (refered to as a context) can be added using `createContext`. This method accepts a String, which is the path that the page will be located at; and an [Http Hander](/simplehttpserver/handler) which handles the request.

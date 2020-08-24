@@ -1,6 +1,6 @@
 <ul id="breadcrumb" class="nav nav-tabs">
     {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
-        <li class="nav-item">{% if page.url != "/" %}<a class="nav-link" href="/">{% endif%}Home</a></li>
+        <li class="nav-item"><a class="nav-link{% if page.url == "/" %} active{% endif %}" href="/">home</a></li>
     {% for crumb in crumbs offset: 1 %}
             {% assign crumb_limit = forloop.index | plus: 1 %}
             {% capture url %}
@@ -16,4 +16,10 @@
             {% endcapture %}
         <li class="nav-item">{{ head }}{{ crumb | replace:'-',' ' | remove:'.html' }}{{ foot }}</li>
     {% endfor %}
+    <li class="nav-item ml-auto">
+        <a class="nav-link active" href="https://github.com/Ktt-Development/wiki.kttdevelopment.com/edit/master/{{ page.path }}"
+            data-toggle="tooltip" data-placement="left" title="Edit this page on GitHub">
+            <i class="fas fa-pencil-alt"></i>
+        </a>
+    </li>
 </ul>

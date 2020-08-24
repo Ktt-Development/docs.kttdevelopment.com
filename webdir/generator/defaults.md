@@ -1,5 +1,3 @@
----
----
 # Defaults
 
 If you want to use the same settings across a wide range of files without tons of import statements, defaults can be used. These are yml files and they are saved in the defaults directory specified in the [configuration](/webdir/generator).

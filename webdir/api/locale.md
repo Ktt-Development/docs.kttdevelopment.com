@@ -1,5 +1,3 @@
----
----
 # Locale
 
 A `LocaleBundle` is used to add support to multiple languages for the plugin. A locale bundle can be retrieved using the `getLocaleBundle` method in the plugin.

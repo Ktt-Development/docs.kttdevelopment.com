@@ -1,5 +1,3 @@
----
----
 # Predicate Handler
 
 This handler accepts a [`Predicate`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html)[`<HttpExchange>`](https://docs.oracle.com/en/java/javase/11/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpExchange.html) and uses that to determine which handler to send the request to.

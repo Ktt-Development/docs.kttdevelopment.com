@@ -1,5 +1,3 @@
----
----
 # Renderer
 
 A renderer determines how content will appear based on the template and any previous renderers that may have already ran.

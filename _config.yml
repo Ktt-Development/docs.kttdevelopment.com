@@ -3,6 +3,10 @@ timezone: America/New_York
 
 title: Ktt Development Wiki
 
+plugins:
+  - jekyll-readme-index
+  - jekyll-optional-front-matter
+
 defaults:
   - scope:
       path: ""

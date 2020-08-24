@@ -1,5 +1,3 @@
----
----
 # Wiki
 
 - [SimpleHttpServer](simplehttpserver)

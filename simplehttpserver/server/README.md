@@ -1,5 +1,3 @@
----
----
 # Creating A Simple Http Server
 
 A simple http server is created the same way that a native http server is created.

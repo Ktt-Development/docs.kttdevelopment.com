@@ -18,6 +18,7 @@
 
     <body class="h-100">
         <div class="row py-2 px-0 m-0">
+            <!-- left -->
             <div class="px-3 m-0" style="width:250px;">
                 <!-- logo -->
                 <div class="col-12 px-0 text-center">
@@ -32,27 +33,31 @@
                     <h5 class="pt-2">Ktt&nbsp;Development Wiki</h5>
                 </div>
                 <!-- nav -->
-                <div class="col-12 px-0 text-capitalize">
-                    {% include sidebar.md %}
+                <div class="sidebar col-12 px-0 text-capitalize">
+                    {% capture sidebar %}
+                        {% include sidebar.md %}
+                    {% endcapture %}
+                    {{ sidebar | markdownify }}
                 </div>
             </div>
-            <div class="col px-0 m-0 mr-4" style="width:500px">
+            <!-- right -->
+            <div class="col px-0 m-0 mx-3" style="width:200px">
                 <!-- nav -->
                 <div class="col-12 mt-3 px-0">
                     {% include breadcrumb.html %}
                 </div>
                 <!-- content -->
                 <div class="col-12 pt-2 pb-4 px-4 bg-white border-left border-right border-bottom">
-                    {{ content }}
+                    {% include anchor_headings.html html=content anchorBody="#" anchorClass="anchor"%}
                 </div>
                 <!-- footer -->
                 <div class="row mt-1 mx-3">
-                    <div class="col-12 col-xl-6">
+                    <div class="col-12 col-xl-6 px-0">
                         <small class="float-right float-xl-left">
                             <a href="https://github.com/Ktt-Development/wiki.kttdevelopment.com">wiki.kttdevelopment.com</a> is maintained by <a href="https://github.com/Ktt-Development">Ktt&nbsp;Development</a>.
                         </small>
                     </div>
-                    <div class="col">
+                    <div class="col px-0">
                         <small class="float-right">
                             Last updated at {{ site.time | date: "%B %d %Y, %r (EST)" }}
                         </small>

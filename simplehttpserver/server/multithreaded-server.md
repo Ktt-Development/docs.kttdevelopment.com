@@ -1,5 +1,3 @@
----
----
 # Multithreaded Server
 
 By default the server runs on a single thread. This means that only one clients exchange can be processed at a time and can lead to long queues.

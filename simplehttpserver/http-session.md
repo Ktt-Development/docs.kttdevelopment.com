@@ -1,5 +1,3 @@
----
----
 # Http Session 
 
 **This feature is only compatible with SimpleHttpServer.**

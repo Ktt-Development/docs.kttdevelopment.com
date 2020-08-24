@@ -1,5 +1,3 @@
----
----
 # Front Matter
 
 In order to pass settings to renderers and actually use renderers, source files use yaml front matter. Any settings set in these files will be available to [renderers](/webdir/api/renderer) in the `yamlFrontMatter` parameter.

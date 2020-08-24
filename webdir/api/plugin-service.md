@@ -1,5 +1,3 @@
----
----
 # Plugin Service
 
 The plugin service is what allows your plugin to use all the features that WebDir offers.

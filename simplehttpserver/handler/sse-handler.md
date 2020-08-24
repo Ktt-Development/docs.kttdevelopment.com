@@ -1,5 +1,3 @@
----
----
 # Server Sent Events (SSE) Handler
 
 The server sent events (SSE) handler allows a constant server to client stream of data. More information on SSE can be found [here](https://www.w3schools.com/html/html5_serversentevents.asp).

@@ -1,5 +1,3 @@
----
----
 # File Handler
 
 The file handler is one of the most complex handlers offered by the simple http server library. This handler allows easy access to files and directories and control over the location and output of these files.

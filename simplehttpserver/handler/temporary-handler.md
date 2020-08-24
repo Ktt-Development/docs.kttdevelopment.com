@@ -1,5 +1,3 @@
----
----
 # Temporary Handler
 
 A temporary handler limits the handler to one exchange. This can be used for single use downloads or image hosting. The handler also accepts an optional time parameter to specify the maximum time the handler can exist for.
