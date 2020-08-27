@@ -6,7 +6,7 @@ The server can track user by the address and port given to the exchange, however
 
 Every time an exchange happens a user is assigned an http session cookie. Each http session has a session id, creation time, and last accessed time.
 
-**The server must have a `HttpSessionHandler` set using `setHttpSessionHandler` for sessions to work.** The session of the client can be retrived using the `getHttpSession` method.
+**The server must have a [`HttpSessionHandler`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/HttpSessionHandler.html) set using `setHttpSessionHandler` for sessions to work.** The session of the client can be retrived using the `getHttpSession` method.
 
 ```java
 SimpleHttpServer server = new SimpleHttpServer(8080);

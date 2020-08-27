@@ -2,7 +2,7 @@
 
 By default the server runs on a single thread. This means that only one clients exchange can be processed at a time and can lead to long queues.
 
-For a server to be multithreaded the executor must be changed to one that process threads in parallel. The executor can be changed using the `setExecutor` method.
+For a server to be multithreaded the executor must be changed to one that process threads in parallel. The executor can be changed using the [`setExecutor`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpServer.html#setExecutor(java.util.concurrent.Executor)) method.
 
 To process a fixed amount of threads you can use [`Executors#newFixedThreadPool(int)`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executors.html#newFixedThreadPool(int)).
 

@@ -1,6 +1,6 @@
 # Creating A Simple Http Server
 
-A simple http server is created the same way that a native http server is created.
+A simple http server is created the same way that a native http server is created; using the [`create`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpServer.html#create()) method.
 
 ```java
 SimpleHttpServer server = SimpleHttpServer.create();
@@ -20,7 +20,7 @@ SimpleHttpServer server = SimpleHttpServer.create(8080);
 SimpleHttpServer server = SimpleHttpServer.create(new InetSocketAddress(8080));
 ```
 
-If the server is not binded at instantiation then it must be binded using the `bind` method.
+If the server is not binded at instantiation then it must be binded using the [`bind`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpServer.html#bind(java.net.InetSocketAddress,int)) method.
 ```java
 SimpleHttpServer server = SimpleHttpServer.create();
 server.bind(8080);
@@ -37,7 +37,7 @@ If the port that the server is currently using is already occupied by another pr
 <!-- start -->
 ## Starting The Server
 
-The server can be started using the `start` method. The server can not be started unless it is binded to a valid port.
+The server can be started using the [`start`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpServer.html#start()) method. The server can not be started unless it is binded to a valid port.
 ```java
 SimpleHttpServer server = SimpleHttpServer.create(8080);
 server.start();
@@ -46,7 +46,7 @@ server.start();
 <!-- stop -->
 ## Stopping The Server
 
-The server can be stopped using the `stop` method. This will stop all inbount requests and currently active exchanges. An optional Integer parameter can also be supplied to specify how long to wait for current exchanges to complete before closing the server.
+The server can be stopped using the [`stop`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpServer.html#stop()) method. This will stop all inbount requests and currently active exchanges. An optional Integer parameter can also be supplied to specify how long to wait for current exchanges to complete before closing the server.
 
 ```java
 SimpleHttpServer server = SimpleHttpServer.create(8080);

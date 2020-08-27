@@ -15,4 +15,4 @@ defaults:
 exclude:
   - "CNAME"
   - "LICENSE"
-  - "*.bat"
+  - ".gitignore"
