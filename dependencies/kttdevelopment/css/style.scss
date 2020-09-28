@@ -19,7 +19,7 @@ $color-red: #e04062;
 
 * {
     font-family: 'Lexend Deca', Arial, Helvetica, sans-serif;
-    outline: none;
+    outline: none !important;
 }
 
 a{
@@ -36,11 +36,29 @@ code, pre{
 }
 
 body{
-    background-color: $color-white;
+     //background-color: $color-white;
 }
 
 img{
     max-width: 100%;
+}
+
+.min-list{
+    ul, li {
+        list-style-type: none;
+    }
+
+    ul {
+        padding-left: 0px;
+    }
+
+    div > ul > li{
+        padding-left: 0px;
+    }
+
+    li{
+        padding-left: 15px;
+    }
 }
 
 // anchor
@@ -52,6 +70,11 @@ a.anchor{
 }
 
 // content
+
+#toc{
+    @extend .min-list;
+    font-size: 90%;
+}
 
 #content{
     > *{
@@ -65,39 +88,40 @@ a.anchor{
 
 // sidebar
 
-.sidebar{
-    h1, h2 , h3, h4, h5, h6 {
-        margin-top: 3rem;
-    }
-    hr{
-        margin-top: .25rem;
-        margin-bottom: .25rem;
-    }
-    ul {
-        padding-left: 0px;
-        ul{
-            padding-left: 20px;
-        }
-    }
+#left, #right{
+    height: 100vh;
+    overflow-y: auto;
+}
 
-    li, ul{
-        list-style: none;
+#left{
+    width: 300px;
+    background-color: $color-dark;
+    @extend .min-list;
+
+    p, a:not(:hover){
+        color: white;
+    }
+}
+
+#top{
+    background-color: $color-dark;
+}
+
+#sidebar{
+    .sidebar-collapse{
+        background-color: #191919;
     }
 }
 
 // breadcrumb
 
 #breadcrumb{
-    li.nav-item{
-        a.nav-link{
-            transition: all 0.25s ease-in-out;
-            padding: .25rem;
-            padding-left: .5rem;
-            padding-right: .5rem;
-            &:hover{
-                background-color: white;
-            }
-        }
+    a{
+        margin: 0px;
+        padding: 0px;
+    }
+    small::before{
+        content: "/"
     }
 }
 

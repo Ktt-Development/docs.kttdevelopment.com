@@ -1,0 +1,14 @@
+<a class="my-1 w-100" href="{{ include.link }}">
+    {{ include.name }}
+</a>
+<div class="ml-4">
+    {% for link in include.links %}
+        {% capture url %}{{ include.link }}{{link.link}}{% endcapture %}
+        {% 
+            include sidebar_link.html 
+            link = url
+            name = link.name
+            links = link.links
+        %}
+    {% endfor %}
+</div>

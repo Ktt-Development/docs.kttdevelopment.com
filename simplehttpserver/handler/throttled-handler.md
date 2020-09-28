@@ -161,4 +161,4 @@ server.setHttpSessionHandler(sessionHandler);
 server.createContext("/", new ThrottledHandler(handler, throttler));
 ```
 
-### [Help: Multithreaded server is not processing requests in parallel.](/simplehttpserver/server/adding/multithreaded-server#Help-Multithreaded-server-is-not-processing-requests-in-parallel)
+[Help: Multithreaded server is not processing requests in parallel.](/simplehttpserver/server/adding/multithreaded-server#Help-Multithreaded-server-is-not-processing-requests-in-parallel)

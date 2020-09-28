@@ -1,0 +1,70 @@
+-
+  name: Server
+  link: /simplehttpserver
+  links:
+    - name: Server
+      link: /server
+      links:
+        - name: Accessing The Server
+          link: /accessing-the-server
+        - name: Adding Pages
+          link: /adding-pages
+        - name: Multithreaded Server
+          link: /multithreaded-server
+    - name: Handler
+      link: /handler
+      links:
+        - name: Http Exchange
+          link: /simple-http-exchange
+        - name: Redirect Handler
+          link: /redirect-handler
+        - name: Predicate Handler
+          link: /predicate-handler
+          links:
+            - name: Root Handler
+              link: "#root-handler"
+        - name: File Handler
+          link: /file-handler
+        - name: SSE Handler
+          link: /sse-handler
+        - name: Temporary Handler
+          link: /temporary-handler
+        - name: Throttled Handler
+          link: /throttled-handler
+    - name: Other Features
+      links:
+        - name: Cookies
+          link: /cookies
+        - name: Http Session
+          link: /http-session
+-
+  name: WebDir
+  link: /webdir
+  links:
+    - name: API
+      link: /api
+      links:
+        - name: Plugin Service
+          link: /plugin-service
+        - name: Configuration
+          link: /configuration
+        - name: Locale
+          link: /locale
+        - name: Renderer
+          link: /renderer
+        - name: Using Other Plugins
+          link: /using-other-plugins
+    - name: Generator
+      link: /webdir/generator
+      links:
+        - name: Front Matter
+          link: /webdir/generator/front-matter
+        - name: Defaults
+          link: /webdir/generator/defaults
+    - name: Server
+      link: /webdir/server
+      links:
+        - name: File Explorer
+          link: /webdir/server/files
+        - name: Permissions
+          link: /webdir/server/permissions
