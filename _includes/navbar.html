@@ -1,0 +1,8 @@
+{% for item in site.data.nav %}
+    {% 
+        include navbar_link.html 
+        name = item.name
+        link = item.link
+        links = item.links
+    %}
+{% endfor %}

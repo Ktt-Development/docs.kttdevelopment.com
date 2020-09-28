@@ -19,7 +19,7 @@ $color-red: #e04062;
 
 * {
     font-family: 'Lexend Deca', Arial, Helvetica, sans-serif;
-    outline: none;
+    outline: none !important;
 }
 
 a{
@@ -101,6 +101,10 @@ a.anchor{
     p, a:not(:hover){
         color: white;
     }
+}
+
+#top{
+    background-color: $color-dark;
 }
 
 #sidebar{

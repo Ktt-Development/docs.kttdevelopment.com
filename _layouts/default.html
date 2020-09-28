@@ -32,6 +32,22 @@
             </div>
             <!-- content -->
             <div id="right" class="col px-0 d-flex flex-column">
+                <!-- top navigation -->
+                <nav id="top" class="nav navbar-expand-lg d-lg-none py-1 px-3">
+                    <a class="navbar-brand text-white" href="/">
+                        <img src="/dependencies/kttdevelopment/assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                        Ktt&nbsp;Development Wiki
+                    </a>
+                    <button class="navbar-toggler ml-auto text-white" type="button" data-toggle="collapse" data-target="#nav-content"">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse mb-3" id="nav-content">
+                        <ul class="navbar-nav">
+                            {% include navbar.html %}
+                        </ul>
+                    </div>
+                </nav>
+                <!-- content -->
                 <div class="container">
                     <div class="m-3">
                         <!-- breadcrumb -->
