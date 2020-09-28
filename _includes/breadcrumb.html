@@ -8,7 +8,7 @@
         {% endfor %}
         {% endcapture %}
         {% capture head %}
-            <a class="nav-link{% if forloop.last %} active text-muted{% endif %} d-inline-block" href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | remove:'.html'}}{% if forloop.last == false %}/{% endif %}{% endfor %}">
+            <a class="nav-link{% if forloop.last %} active text-muted{% endif %} d-inline-block" href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{% if forloop.first %}{% else %}/{% endif %}{{ crumb | remove:'.html'}}{% endfor %}">
         {% endcapture %}
         {% capture foot %}
             </a>
