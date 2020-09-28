@@ -36,7 +36,7 @@ code, pre{
 }
 
 body{
-    background-color: $color-white;
+     //background-color: $color-white;
 }
 
 img{
@@ -53,6 +53,25 @@ a.anchor{
 
 // content
 
+#toc{
+    ul, li {
+        list-style-type: none;
+    }
+
+    ul {
+        padding-left: 0px;
+    }
+
+    div > ul > li{
+        padding-left: 0px;
+    }
+
+    li{
+        padding-left: 15px;
+    }
+    font-size: 90%;
+}
+
 #content{
     > *{
         margin-top: 10px;
@@ -64,6 +83,16 @@ a.anchor{
 }
 
 // sidebar
+
+#left, #right{
+    height: 100vh;
+    overflow-y: auto;
+}
+
+#left{
+    width: 250px;
+    background-color: $color-dark;
+}
 
 .sidebar{
     h1, h2 , h3, h4, h5, h6 {
@@ -88,16 +117,12 @@ a.anchor{
 // breadcrumb
 
 #breadcrumb{
-    li.nav-item{
-        a.nav-link{
-            transition: all 0.25s ease-in-out;
-            padding: .25rem;
-            padding-left: .5rem;
-            padding-right: .5rem;
-            &:hover{
-                background-color: white;
-            }
-        }
+    a{
+        margin: 0px;
+        padding: 0px;
+    }
+    small::before{
+        content: "/"
     }
 }
 

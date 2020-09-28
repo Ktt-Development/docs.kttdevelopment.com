@@ -18,8 +18,81 @@
         <link rel="stylesheet" href="/dependencies/kttdevelopment/css/highlight.css">
     </head>
 
-    <body class="h-100 d-flex flex-column">
-        <div class="row py-2 px-0 m-0">
+    <body class="h-100">
+        <div class="row m-0">
+            <!-- sidebar -->
+            <div id="left" class="d-none d-xl-block">
+                {% capture sidebar %}
+                    {% include sidebar.md %}
+                {% endcapture %}
+                {{ sidebar | markdownify }}
+            </div>
+            <div id="right" class="col px-0 d-flex flex-column">
+                <div class="container">
+                    <div class="mt-3">
+                        <!-- breadcrumb -->
+                        <div class="row mb-5">
+                            {% include breadcrumb.html %}
+                        </div>
+                        <div class="row">
+                            <!-- content -->
+                            <div class="col-12 col-xl-9 order-6 order-xl-0">
+                                {% include anchor_headings.html html=content 
+                                    anchorBody="#" 
+                                    anchorClass="anchor" %}
+                            </div>
+                            <!-- toc -->
+                            {% capture meta %}
+                                <div id="meta">
+                                    <a class="float-right small" href="https://github.com/Ktt-Development/wiki.kttdevelopment.com/edit/master/{{ page.path }}"
+                                        >Edit this page on GitHub
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                    <br>
+                                </div>
+                            {% endcapture %}
+                            {% capture toc %}
+                                <p class="mb-0">Content</p>
+                                <div>
+                                    {% include toc.html 
+                                    html=content %}
+                                </div>
+                                <hr>
+                                <div class="d-sm-none d-xl-block">
+                                    {{ meta }}
+                                </div>
+                            {% endcapture %}
+
+                            <div id="toc" class="col-12 col-xl-3 order-0 order-xl-6">
+                                <!-- top -->
+                                <div class="d-xl-none ">
+                                    {{ toc }}
+                                </div>
+                                <!-- right -->
+                                <div class="d-none d-xl-block position-fixed">
+                                    {{ toc }}
+                                </div>
+                            </div>
+                            <!-- metadata -->
+                            <div class="col-12 order-12 d-xl-none">
+                                <hr>
+                                {{ meta }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer -->
+                <div class="footer mt-auto">
+                    <div id="copyright" class="text-center">
+                        <small class="no-translate m-0">
+                            &copy; Ktt&nbsp;Development 2020. All rights reserved
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row py-2 px-0 m-0 d-none">
             <!-- left -->
             <div class="px-3 m-0" style="width:250px;">
                 <!-- logo -->
@@ -68,7 +141,7 @@
             </div>
         </div>
         <!-- footer -->
-        <div class="footer mt-auto">
+        <div class="footer mt-auto d-none">
             <div id="copyright" class="text-center">
                 <small class="no-translate m-0">
                     &copy; Ktt&nbsp;Development 2020. All rights reserved
@@ -85,7 +158,5 @@
                 $('[data-toggle="tooltip"]').tooltip();
             })
         </script>
-        <!-- local -->
-        <script src="/dependencies/kttdevelopment/js/anchor-scroll.js"></script>
     </body>
 </html>

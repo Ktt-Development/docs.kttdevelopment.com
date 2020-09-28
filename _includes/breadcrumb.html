@@ -1,25 +1,18 @@
-<ul id="breadcrumb" class="nav nav-tabs">
+<div id="breadcrumb">
     {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
-        <li class="nav-item"><a class="nav-link{% if page.url == "/" %} active{% endif %}" href="/">home</a></li>
     {% for crumb in crumbs offset: 1 %}
-            {% assign crumb_limit = forloop.index | plus: 1 %}
-            {% capture url %}
-            {% for crumb in crumbs limit: crumb_limit %}
-                {{ crumb }}
-            {% endfor %}
-            {% endcapture %}
-            {% capture head %}
-                <a class="nav-link{% if forloop.last %} active{% endif %}" href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | remove:'.html'}}{% if forloop.last == false %}/{% endif %}{% endfor %}">
-            {% endcapture %}
-            {% capture foot %}
-                </a>
-            {% endcapture %}
-        <li class="nav-item">{{ head }}{{ crumb | replace:'-',' ' | remove:'.html' }}{{ foot }}</li>
+        {% assign crumb_limit = forloop.index | plus: 1 %}
+        {% capture url %}
+        {% for crumb in crumbs limit: crumb_limit %}
+            {{ crumb }}
+        {% endfor %}
+        {% endcapture %}
+        {% capture head %}
+            <a class="nav-link{% if forloop.last %} active text-muted{% endif %} d-inline-block" href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | remove:'.html'}}{% if forloop.last == false %}/{% endif %}{% endfor %}">
+        {% endcapture %}
+        {% capture foot %}
+            </a>
+        {% endcapture %}
+        <small>{{ head }}{{ crumb | replace:'-',' ' | remove:'.html' }}{{ foot }}</small>
     {% endfor %}
-    <li class="nav-item ml-auto">
-        <a class="nav-link active" href="https://github.com/Ktt-Development/wiki.kttdevelopment.com/edit/master/{{ page.path }}"
-            data-toggle="tooltip" data-placement="left" title="Edit this page on GitHub">
-            <i class="fas fa-pencil-alt"></i>
-        </a>
-    </li>
-</ul>
+</div>
