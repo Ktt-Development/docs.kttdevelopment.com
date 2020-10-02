@@ -21,7 +21,7 @@ For projects using Maven or Gradle compiled binaries are posted on JitPack.
 
 **You must select the `webdir-api` module to get the API.**
 
-[![Select Subproject/webdir-api](https://raw.githubusercontent.com/Ktt-Development/webdir/master/readme-jitpack-api.png)](https://jitpack.io/#com.kttdevelopment/webdir)
+[![Select Subproject/webdir-api](https://raw.githubusercontent.com/Ktt-Development/webdir/main/readme-jitpack-api.png)](https://jitpack.io/#com.kttdevelopment/webdir)
 
 
 # API Documentation
