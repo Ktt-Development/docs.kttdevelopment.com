@@ -31,12 +31,10 @@
           link: /temporary-handler
         - name: Throttled Handler
           link: /throttled-handler
-    - name: Other Features
-      links:
-        - name: Cookies
-          link: /cookies
-        - name: Http Session
-          link: /http-session
+    - name: Cookies
+      link: /cookies
+    - name: Http Session
+      link: /http-session
 -
   name: WebDir
   link: /webdir
