@@ -105,6 +105,8 @@ a.anchor{
 
 #top{
     background-color: $color-dark;
+    max-height: 100%;
+    overflow-y: scroll;
 }
 
 #sidebar{
