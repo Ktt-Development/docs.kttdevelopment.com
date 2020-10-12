@@ -1,0 +1,15 @@
+<li class="nav-item pb-1">
+    <a class="nav-link text-white p-0" href="{{ include.link }}">{{include.name}}</a>
+</li>
+{% if include.links %}
+    <div class="pl-2 ml-2 border-left">
+        {% for link in include.links %}
+            {% capture url %}{{ include.link }}{{ link.link }}{% endcapture %}
+            {% include navbar_link.liquid 
+                name = link.name
+                link = url
+                links = link.links
+            %}
+        {% endfor %}
+    </div>
+{% endif %}

@@ -35,6 +35,12 @@
       link: /cookies
     - name: Http Session
       link: /http-session
+- 
+  name: Rexedia
+  link: /rexedia
+  links:
+    - name: Arguments
+      link: /arguments
 -
   name: WebDir
   link: /webdir
@@ -53,16 +59,16 @@
         - name: Using Other Plugins
           link: /using-other-plugins
     - name: Generator
-      link: /webdir/generator
+      link: /generator
       links:
         - name: Front Matter
-          link: /webdir/generator/front-matter
+          link: /front-matter
         - name: Defaults
-          link: /webdir/generator/defaults
+          link: /defaults
     - name: Server
-      link: /webdir/server
+      link: /server
       links:
         - name: File Explorer
-          link: /webdir/server/files
+          link: /files
         - name: Permissions
-          link: /webdir/server/permissions
+          link: /permissions

@@ -5,7 +5,7 @@
     {% for link in include.links %}
         {% capture url %}{{ include.link }}{{link.link}}{% endcapture %}
         {% 
-            include sidebar_link.html 
+            include sidebar_link.liquid 
             link = url
             name = link.name
             links = link.links
