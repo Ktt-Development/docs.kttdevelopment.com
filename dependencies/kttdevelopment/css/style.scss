@@ -24,8 +24,9 @@ $color-red: #e04062;
 
 a{
     &, &:hover{
-        transition: all 0.25s ease-in-out;
-        text-decoration: none;
+        transition: all 0.25s ease-in-out !important;
+        text-decoration: none !important;
+        color: #0056b3 !important;
     }
 }
 
