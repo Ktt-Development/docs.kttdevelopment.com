@@ -77,7 +77,8 @@ The byte loading option enum parameter determines how files will be stored on th
 |Type|Usage|
 |---|---|
 |`PRELOAD`|Reads file when it is added.|
-|`WATCHLOAD`|Reads file when it is added and any time it is modified.|
+|`MODLOAD`|Reads file when it is added and any time it is modified.|
+|`CACHELOAD`|Reads file when it is added and clears after a set time. Requires a [`CacheFileAdapter`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/handler/CacheFileAdapter.html).|
 |`LIVELOAD`|Reads the file when it is accessed by the user.|
 
 ```java

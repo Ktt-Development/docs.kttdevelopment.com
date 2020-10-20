@@ -68,39 +68,29 @@ SimpleHttpHandler handler = new SimpleHttpHandler(){
 
 Most post requests to are not as simple as keys and values.
 
-This library adds support to multipart forms in a map containg the headers, content type, and values for each key.
+This library adds support to multipart forms as a [`MultipartFormData`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/MultipartFormData.html) object. This can be retrieved using the [`getPostMap`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getMultipartFormData()) method in the exchange.
+
+The [`MultipartFormData`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/MultipartFormData.html) is a map of [`Records`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/Recors.html) and [`FileRecords`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/FileRecord.html).
 
 Note that this feature is experimental.
 
-**Example Map:**
-```json
-{
-    "name_of_key" : {
-        "headers": { },
-        "value": ""
-    },
-    "name_of_file_key": {
-        "headers": {
-            "Content-Disposition": {
-                "header-name": "Content-Disposition",
-                "header-value": "form-data",
-                "parameters": {
-                    "filename": "file.txt",
-                    "name": "file"
-                }
-            },
-            "Content-Type": {
-                "header-name": "Content-Type",
-                "header-value": "text/plain",
-                "parameters": {}
-            }
-        },
-        "value": "value in bytes"
+Files sent through an exchange will be sent as bytes and not a file.
+
+
+```java
+SimpleHttpHandler handler = new SimpleHttpHandler(){
+
+    @Override
+    public void handle(SimpleHttpExchange exchange){
+        MultipartFormData form = exchange.getMultipartFormData();
+        Record record = form.getRecord("record");
+        FileRecord file = (FileRecord) form.getRecord("file");
+
+        final byte[] fileContent = file.getBytes();
     }
+
 }
 ```
-
-Files sent through an exchange will be sent as bytes and not a file.
 
 <!-- response -->
 ## Response
@@ -116,7 +106,7 @@ The headers are sent with a response code. More information on these codes can b
 <!-- send -->
 ## Sending Data
 
-Data can be sent to the user using any of the [`send`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#send(byte%5B%5D)) methods. The send method can send data using String or byte arrays.
+Data can be sent to the user using any of the [`send`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#send(byte%5B%5D)) methods. The send method can send data using byte arrays, Strings or Files.
 
 An optional boolean parameter can be used to compress files into [gzip](https://en.wikipedia.org/wiki/Gzip) files for faster exchanges.
 
