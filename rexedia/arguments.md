@@ -48,19 +48,18 @@ rexedia -i video.mp4 -m "season_number" "\[S0*(\d*) E0*\d*\]" "$1" -m "episode_n
 ```
 
 # Presets
-**yaml syntax may require additional backslashes for escape characters**
 
 ```yml
 cover:  # cover art
-  regex: "(.+)"  # the regex capture string
-  format: "$1"  # the final cover art name (regex backreferences supported)
+  regex: '(.+)'  # the regex capture string
+  format: '$1'  # the final cover art name (regex backreferences supported)
 metadata:  # list of metadata tags
-  - meta: "name"  # the metadata tag name
-    regex: "(.+)"  # the regex capture string
-    format: "$1"  # the final metadata value (regex backreferences supported)
+  - meta: 'name'  # the metadata tag name
+    regex: '(.+)'  # the regex capture string
+    format: '$1'  # the final metadata value (regex backreferences supported)
 output:  # output file
-  regex: "(.+)"  # the regex capture string
-  format: "$1"  # the final output name (regex backreferences supported)
+  regex: '(.+)'  # the regex capture string
+  format: '$1'  # the final output name (regex backreferences supported)
 ```
 
 ## Example Usage
@@ -74,15 +73,15 @@ output:  # output file
 ```yml
 // preset.yml
 metadata:  
-  - meta: "season_number"  
-    regex: "\\[S0*(\\d*) E0*\\d*\\]"
-    format: "$1"
-  - meta: "episode_number"
-    regex: "\\[S0*\\d* E0*(\\d*)\\]"
-    format: "$1"
-  - meta: "show"
-    regex: "\\[S0*\\d* E0*\\d*\\] (.+)"
-    format: "$1"
+  - meta: 'season_number'
+    regex: '\[S0*(\d*) E0*\d*\\]'
+    format: '$1'
+  - meta: 'episode_number'
+    regex: '\[S0*\d* E0*(\d*)\]'
+    format: '$1'
+  - meta: 'show'
+    regex: '\[S0*\d* E0*\d*\] (.+)'
+    format: '$1'
 ```
 ```sh
 rexedia -i video.mp4 -p preset.yml
