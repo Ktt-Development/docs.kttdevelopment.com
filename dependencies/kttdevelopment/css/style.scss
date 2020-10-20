@@ -22,7 +22,7 @@ $color-red: #e04062;
     outline: none !important;
 }
 
-a{
+a:not(.navbar-brand){
     &, &:hover{
         transition: all 0.25s ease-in-out !important;
         text-decoration: none !important;
