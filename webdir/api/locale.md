@@ -4,7 +4,8 @@ A `LocaleBundle` is used to add support to multiple languages for the plugin. A 
 
 The resource parameter is the name of the locale bundle file without any locale codes.
 
-**Example:**
+**Example:** A bundle file with the name `bundle_en_US.yml` would have a resource name of `bundle`.
+
 ```java
 public class Plugin extends WebDirPlugin{
 
@@ -14,28 +15,23 @@ public class Plugin extends WebDirPlugin{
 
     @Override
     public void onEnable(){
-        /* This would create a locale bundle of all the 'bundle' files.
-                ↓
-            - bundle.properties
-            - bundle_en.properties
-            - bundle_en_US.properties
-        */
         LocaleBundle bundle = getLocaleBundle("bundle");
     }
 
 }
 ```
 
-A locale bundle will search for the nearest matching locale file available. The default language is `English (US)`.
+Language bundles will always look for the nearest matching locale file available.
+
+If a locale file is not found for the currently selected language it will attempt to find the closest match by language code and region, before using the closest default locale file.
 
 **Example:**
 ```
-bundle_jp_JA_UNIX.properties
-bundle_jp_JA.properties
-bundle_jp.properties
-bundle_en_US.properties
-bundle_en.properties
-bundle.properties
+bundle_jp_JA.yml
+bundle_jp.yml
+bundle_en_US.yml
+bundle_en.yml
+bundle.yml
 ```
 
 ## Localized Strings

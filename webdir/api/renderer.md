@@ -6,8 +6,8 @@ A renderer determines how content will appear based on the template and any prev
 public class PluginRenderer extends Renderer{
 
     @Override
-    String render(File input, File output, ConfigurationSection yamlFrontMatter, String content){
-        return content;
+    public byte[] render(final FileRender render){
+        return super.render(render);
     }
 
 }
@@ -29,7 +29,7 @@ public class Plugin extends WebDirPlugin{
 
 }
 ```
-The renderer can then be accessed by templates in the `renderers` setting in [front matter](/webdir/generator/front-matter).
+The renderer can then be accessed by templates in the `renderers` setting in [front matter](/webdir/front-matter).
 
 ```yml
 ---
@@ -48,81 +48,31 @@ renderers:
 ---
 ```
 
-<!-- server -->
-# Server Renderer
-
-**Server renderer are only compatible with WebDir Server.**
-
-The server renderer acts the same as a standard renderer but has an additional server parameter.
-
-```java
-public class PluginRenderer extends Renderer{
-
-    @Override
-    String render(SimpleHttpServer server, File input, File output, ConfigurationSection yamlFrontMatter, String content){
-        return content;
-    }
-
-}
-```
-
-This renderer can also be accessed in the renderers.
-```yml
----
-renderers:
-  - pluginServerRenderer
----
-```
-
-<!-- exchange -->
 # Exchange Renderer
 
-**Server renderer are only compatible with WebDir Server.**
-
-The exchange renderer acts the same as a standard renderer but runs during an http exchange instead of at the initial build stage.
+The exchange renderer acts the same as a standard renderer but only runs on the server.
 
 ```java
 public class PluginRenderer extends Renderer{
 
     @Override
-    String render(SimpleHttpExchange exchange, File input, File output, ConfigurationSection yamlFrontMatter, String content){
-        return new String(bytes);
+    public byte[] render(final FileRender render){
+        SimpleHttpServer server = render.getServer();
+        SimpleHttpExchange exchange = render.getHttpExchange();
+
+        return super.render(render);
     }
 
 }
 ```
 
-This renderer is accessed in exchange renderers. All previous renderers can also be added here if you want to run them during an exchange.
+This renderer can be used under both the `renderers` and `exchange_renderers` tag, but the server and exchange will only be accesible using [defaults](/webdir/defaults#defaults).
 ```yml
----
-exchangeRenderers:
+exchange_renderers:
   - pluginExchangeRenderer
----
 ```
 
-<!-- file -->
 # File Renderer
 
-**Server renderer are only compatible with WebDir Server.**
+For renders using the file explorer, either render can be used but they must be listed under the `exchange_renderers` tag in [defaults](/webdir/defaults#file-defaults) in order to run.
 
-The exchange renderer acts the same as a standard renderer but runs during an http exchange instead of at the initial build stage.
-
-```java
-public class PluginRenderer extends Renderer{
-
-    @Override
-    String render(SimpleHttpServer server, SimpleHttpExchange exchange, File input, ConfigurationSection yamlFrontMatter, byte[] bytes){
-        return new String(bytes);
-    }
-
-}
-```
-
-The renderer can only be accessed in [defaults](/webdir/generator/defaults#file-defaults) under the `exchangeRenderers` setting in [front matter](/webdir/generator/front-matter). All previous renderers can also be added here if you want to run them during the exchange.
-
-```yml
----
-exchangeRenderers:
-  - pluginFileRenderer
----
-```

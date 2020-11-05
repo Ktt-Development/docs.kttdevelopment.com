@@ -1,27 +1,13 @@
 # WebDir
 
-Web Dir is an extensible site generator and file explorer. Built with JDK11.
-
+WebDir is an extensible site generator and file explorer.
 
 <!-- setup -->
 # Setup
 
-## Generator / Server
+For people using WebDir executables are available in releases. [![version](https://img.shields.io/github/v/release/Ktt-Development/webdir)](https://github.com/Ktt-Development/webdir/releases)
 
-WebDir Generator & Server executables can be found in releases.
-[![releases](https://img.shields.io/github/v/release/ktt-development/webdir?color=44cc11&include_prereleases)](https://github.com/Ktt-Development/webdir/releases)
-
-## API
-
-For projects built locally, compiled binaries can be found in releases.
-[![releases](https://img.shields.io/github/v/release/ktt-development/webdir?color=44cc11&include_prereleases)](https://github.com/Ktt-Development/webdir/releases)
-
-For projects using Maven or Gradle compiled binaries are posted on JitPack.
-[![jitpack](https://jitpack.io/v/com.kttdevelopment/webdir.svg)](https://jitpack.io/#com.kttdevelopment/webdir)
-
-**You must select the `webdir-api` module to get the API.**
-
-[![Select Subproject/webdir-api](https://raw.githubusercontent.com/Ktt-Development/webdir/main/readme-jitpack-api.png)](https://jitpack.io/#com.kttdevelopment/webdir)
+For plugin developers compiled binaries can be found on Maven and in releases. [![Maven Central](https://img.shields.io/maven-central/v/com.kttdevelopment.webdir/webdir-api)](https://mvnrepository.com/artifact/com.kttdevelopment.webdir/webdir-api) [![version](https://img.shields.io/github/v/release/Ktt-Development/webdir)](https://github.com/Ktt-Development/webdir/releases)
 
 
 # API Documentation

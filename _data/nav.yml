@@ -48,27 +48,19 @@
     - name: API
       link: /api
       links:
-        - name: Plugin Service
-          link: /plugin-service
-        - name: Configuration
-          link: /configuration
         - name: Locale
           link: /locale
         - name: Renderer
           link: /renderer
         - name: Using Other Plugins
           link: /using-other-plugins
-    - name: Generator
-      link: /generator
-      links:
-        - name: Front Matter
-          link: /front-matter
-        - name: Defaults
-          link: /defaults
-    - name: Server
-      link: /server
-      links:
-        - name: File Explorer
-          link: /files
-        - name: Permissions
-          link: /permissions
+    - name: Configuration
+      link: /configuration
+    - name: Front Matter
+      link: /front-matter
+    - name: Defaults
+      link: /defaults
+    - name: File Explorer
+      link: /files
+    - name: Permissions
+      link: /permissions

@@ -45,8 +45,19 @@ authors:
 dependencies:
 ```
 
-All the settings can be retrieved using the `getPluginYml` method in the plugin. 
+## Logger
 
-## Compiling
+In order for the plugin to log to files correctly they must use the logger provided in the `getLogger` method of the plugin. This logger uses the plugin name when sending messages.
+
+## Plugin Folder
+
+For plugins that use external files, like configurations and data storage, it is recommended to use the plugin folder provided in the `getPluginFolder` method in order to avoid conflicting files across plugins.
+
+This folder is automatically created when the `getPluginFolder` method is used.
+
+# Compiling
 
 All WebDir plugins must be compiled in JDK11+, older versions not supported.
+You do not need to compile the WebDir API into your jar, WebDir already has this installed.
+
+If your plugin requires external (non webdir) jars then you must either compile your plugin with the dependency included or load them using the class loader.

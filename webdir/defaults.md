@@ -1,6 +1,6 @@
 # Defaults
 
-If you want to use the same settings across a wide range of files without tons of import statements, defaults can be used. These are yml files and they are saved in the defaults directory specified in the [configuration](/webdir/generator).
+If you want to use the same settings across a wide range of files without tons of import statements, defaults can be used. These are yml files and they are saved in the defaults directory specified in the [configuration](/webdir/configuration#directories).
 
 The index determines in what order defaults are used in (for files that use multiple defaults). 
 
@@ -34,6 +34,6 @@ default:
   scope:
     # Any file in c drive
     - "/C:/*"
-renderer:
+exchange_renderer:
   - fileRendererName
 ```

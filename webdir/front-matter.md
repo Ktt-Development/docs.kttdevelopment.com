@@ -15,22 +15,9 @@ renderer:
 ---
 ```
 
-## Exchange Renderers
-
-Renderers for servers use the `exchangeRenderer` tag.
-
-```yml
----
-exchangeRenderer:
-  - exchangeRenderName
-  - pluginName: pluginName
-    renderer: exchangeRendererName
----
-```
-
 ## File Renderers
 
-File renderers use [defaults](/webdir/generator/defaults#file-defaults) instead of front matter. See [File Renderers](/webdir/api#file-renderer) for more details.
+File renderers use [defaults](/webdir/defaults#file-defaults) instead of front matter.
 
 # Imports
 
