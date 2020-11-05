@@ -2,7 +2,7 @@
 
 ## Main Class
 
-The main class for your plugin can be any name, but it must extend `WebDirPlugin`.
+The main class for your plugin can be any name, but it must extend [`WebDirPlugin`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/WebDirPlugin.html).
 
 
 ```java
@@ -47,13 +47,13 @@ dependencies:
 
 ## Logger
 
-In order for the plugin to log to files correctly they must use the logger provided in the `getLogger` method of the plugin. This logger uses the plugin name when sending messages.
+In order for the plugin to log to files correctly they must use the logger provided in the [`getLogger`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/WebDirPlugin.html#getLogger()) method of the plugin. This logger uses the plugin name when sending messages.
 
 ## Plugin Folder
 
-For plugins that use external files, like configurations and data storage, it is recommended to use the plugin folder provided in the `getPluginFolder` method in order to avoid conflicting files across plugins.
+For plugins that use external files, like configurations and data storage, it is recommended to use the plugin folder provided in the [`getPluginFolder`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/PluginService.html#getPluginFolder()) method in order to avoid conflicting files across plugins.
 
-This folder is automatically created when the `getPluginFolder` method is used.
+This folder is automatically created when the [`getPluginFolder`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/PluginService.html#getPluginFolder()) method is used.
 
 # Compiling
 

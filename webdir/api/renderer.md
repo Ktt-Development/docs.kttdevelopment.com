@@ -1,6 +1,6 @@
 # Renderer
 
-A renderer determines how content will appear based on the template and any previous renderers that may have already ran.
+A [renderer](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/Renderer.html) determines how content will appear based on the template and any previous renderers that may have already ran.
 
 ```java
 public class PluginRenderer extends Renderer{
@@ -13,7 +13,7 @@ public class PluginRenderer extends Renderer{
 }
 ```
 
-To add a renderer to your plugin you use the `addRenderer` method. A renderer name is required.
+To add a renderer to your plugin you use the [`addRenderer`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/WebDirPlugin.html#addRenderer(java.lang.String,com.kttdevelopment.webdir.api.Renderer)) method. A renderer name is required.
 
 ```java
 public class Plugin extends WebDirPlugin{
