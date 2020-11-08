@@ -18,7 +18,7 @@ default:
     - "*.html"
     # Not any css file
     - "!*.css"
-renderer: 
+renderers: 
   - rendererName
 ```
 
@@ -34,6 +34,6 @@ default:
   scope:
     # Any file in c drive
     - "/C:/*"
-exchange_renderer:
+exchange_renderers:
   - fileRendererName
 ```
