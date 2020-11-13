@@ -12,7 +12,7 @@ SimpleHttpServer server = SimpleHttpServer.create();
 server.setExecutor(Executors.newFixedThreadPool(10));
 ```
 
-To process an unlimited amount of simultaneous threads you can use [`Executors#newCachedThreadPool()`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executors.html#newFixedThreadPool(int)).
+To process an unlimited amount of simultaneous threads you can use [`Executors#newCachedThreadPool()`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Executors.html#newCachedThreadPool()).
 
 
 ```java
