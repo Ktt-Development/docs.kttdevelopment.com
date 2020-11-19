@@ -36,3 +36,13 @@ Relative imports can also be used to import files based on the location of that 
 import_relative: /import.yml
 ---
 ```
+
+# No Output
+
+If you want to run renderers on a file but not create a file in the output, use the `ignore` tag.
+
+```yml
+---
+ignore: true
+---
+```

@@ -68,13 +68,28 @@ port: 80
 
 ## Files Context
 
-The files context is where files from your computer will be served at.
+The files context is where files from your computer will be served at. The raw context is where the raw file will be served at (without any renderers).
 
 ```yml
+# The context to view raw files at.
+# Ex: setting this to 'raw' would put files from C://* at http://localhost/raw/C:/*
+# Default: raw
+raw: raw
+
 # The context to view files at.
 # Ex: setting this to 'files' would put files from C://* at http://localhost/files/C:/*
 # Default: files
 context: files
+```
+
+## 404 Page
+
+The 404 page is the default page that wil be used if no page can be found for the specified context. Only used for files in the output folder, not computer files.
+
+```yml
+# The file to use as the 404 page.
+# Default: 404.html
+404: 404.html
 ```
 
 ## Permissions

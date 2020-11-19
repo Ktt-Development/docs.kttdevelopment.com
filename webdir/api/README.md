@@ -29,6 +29,8 @@ public class Plugin extends WebDirPlugin {
 
 The `plugin.yml` file tells WebDir how to load the plugin and where the main class is. This file must be saved in the top level of the resources folder.
 
+The information from this class can be obtained using the [`getPluginYml`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/WebDirPlugin.html#getPluginYml()) method.
+
 ```yml
 # The name of the plugin. required
 name: PluginName
