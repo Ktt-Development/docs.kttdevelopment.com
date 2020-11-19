@@ -84,7 +84,7 @@ context: files
 
 ## 404 Page
 
-The 404 page is the default page that wil be used if no page can be found for the specified context. Only used for files in the output folder, not computer files.
+The 404 page is the default page that wil be used if no page can be found for the specified context.
 
 ```yml
 # The file to use as the 404 page.
