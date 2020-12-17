@@ -61,3 +61,15 @@
     }
 
 }
+
+.topnav{
+    
+    .topnav-search form{
+        max-width: 400px;
+    }
+
+}
+
+:not(.topnav-search) form{
+    max-width: 500px;
+}

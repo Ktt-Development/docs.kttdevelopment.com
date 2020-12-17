@@ -1,9 +1,11 @@
+<!-- All Repositories -->
 <li class="sidebar-link mt-2">
     <a class="d-block small pl-4 py-1" href="/">
         <i class="fas fa-angle-left fa-fw"></i>
         All Repositories
     </a>
 </li>
+<!-- Current Repository -->
 {% assign ref = page.path | split:'/' %}
 {% assign nav_ref = ref[0] %}
 {% assign repo = site.data.navigation[nav_ref] %}
@@ -13,10 +15,12 @@
     </a>
 </li>
 {% assign cat_ref = ref[1] | prepend: '/' %}
+<!-- Categories -->
 {% for category in repo.categories %}
 <li class="sidebar-link {% if category.link == cat_ref  %}sidebar-category{% endif %}">
     {% if category.link == cat_ref  %}
         <details open>
+            <!-- Active Category -->
             <summary>
                 <div class="d-block d-flex justify-content-between align-items-center">
                     <a class="d-block pl-4 py-2 mr-3 text-muted" style="flex: auto" href="{{ repo.link }}{{ category.link }}">
@@ -26,6 +30,7 @@
                     <i class="summary-closed text-white fas fa-angle-down fa-fw mx-2"></i>
                 </div>
             </summary>
+            <!-- Pages -->
             <ul class="pl-0">
                 {% for links in category.links %}
                     <li class="sidebar-link">
@@ -37,6 +42,7 @@
             </ul>
         </details>
     {% else %}
+        <!-- Category -->
         <a class="d-block pl-4 py-2" href="{{ repo.link }}{{ category.link }}">
             {{ category.name }}
         </a>
