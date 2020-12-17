@@ -1,0 +1,19 @@
+<div class="sidebar d-none d-lg-block vh-100 pb-3">
+    <div class="sidebar-brand d-flex align-items-center p-4 position-sticky">
+        <a href="/">
+            <img src="/dependencies/kttdevelopment/assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        </a>
+        <a class="pl-2 text-white" href="/">Documentation</a>
+    </div>
+    <div>
+        {% if error or page.path == 'index.html' %}
+            <ul class="sidebar-nav pl-0" style="margin-top: 35px;">
+                {% include default/sidebar-homepage.liquid %}
+            </ul>
+        {% else %}
+            <ul class="sidebar-nav pl-0">
+                {% include default/sidebar-repository.liquid %}
+            </ul>
+        {% endif %}
+    </div>
+</div>

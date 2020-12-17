@@ -1,0 +1,33 @@
+.sidebar{
+    width: 260px;
+    min-width: 260px;
+    background-color: $color-dark;
+    overflow-y: auto;
+
+    > a:hover {
+        text-decoration: none;
+    }
+
+    .sidebar-brand{
+        top: 0;
+        background-color: $color-dark;
+        > a:hover{
+            text-decoration: none;
+        }
+    }
+
+    .sidebar-nav{
+        list-style-type: none;
+    }
+
+    .sidebar-link{
+        a{
+            color: white;
+        }
+    }
+
+    .sidebar-category{
+        background-color: $color-darker;
+    }
+
+}

@@ -1,0 +1,35 @@
+<li class="sidebar-link mt-2">
+    <a class="d-block small pl-4 py-1" href="/">
+        <i class="fas fa-angle-left fa-fw"></i>
+        All Repositories
+    </a>
+</li>
+{% assign repo = site.data.navigation[page.nav_ref] %}
+<li class="sidebar-link">
+    <a class="d-block pl-4 py-2" href="{{ repo.link }}" {% if external %}target="_blank"{% endif %}>
+        {{ repo.name }}
+    </a>
+</li>
+{% for category in repo.categories %}
+<li class="sidebar-link sidebar-category">
+    {% if category.link == page.path  %}
+        <details>
+            <summary>
+                <div>
+                    {{ category.name }}
+                    <i class="fas fa-angle-up"></i>
+                </div>
+            </summary>
+            <ul>
+                {% for links in category.links %}
+
+                {% endfor %}
+            </ul>
+        </details>
+    {% else %}
+        <a class="d-block pl-4 py-2" href="{{ repo.link }}/{{ category.link }}">
+            {{ category.name }}
+        </a>
+    {% endif %}
+</li>
+{% endfor %}

@@ -1,0 +1,18 @@
+{% for repo_hash in site.data.navigation %}
+    <li class="sidebar-link">
+        {% assign repo = repo_hash[1] %}
+        {% assign first = repo.link | slice: 0 %}
+        {% if first != '/' and first != '#' %}
+            {% assign external = true %}
+        {% else %}
+            {% assign external = false %}
+        {% endif %}
+
+        <a class="d-block pl-4 py-2" href="{{ repo.link }}" {% if external %}target="_blank"{% endif %}>
+            {{ repo.name }}
+            {% if external %}
+                <i class="fas fa-external-link-alt"></i>
+            {% endif %}
+        </a>
+    </li>
+{% endfor %}
