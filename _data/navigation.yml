@@ -6,7 +6,20 @@ simplehttpserver:
       link: /server
       links: 
         - name: Accessing The Server
-          link: accessing-the-server
+          link: /accessing-the-server
+        - name: Adding Pages
+          link: /adding-pages
+        - name: Multithreaded Server
+          link: /multithreaded-server
+    - name: Handlers
+      link: /handler
+      links:
+        - name: Http Exchange
+          link: /simple-http-exchange
+        - name: Redirect Handler
+          link: /redirect-handler
+        - name: Predicate Handler
+          link: /predicate-handler
 rexedia:
   name: Rexedia
   link: /rexedia

@@ -24,6 +24,36 @@
         a{
             color: white;
         }
+
+        details{
+
+            summary{
+                list-style: none;
+                &::-webkit-details-marker{
+                    display: none;
+                }
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            i.summary-open, i.summary-closed{
+                display: inline-block;
+            }
+
+            &[open]{
+                i.summary-closed{
+                    display: none;
+                }
+            }
+
+            &:not([open]){
+                i.summary-open{
+                    display: none;
+                }
+            }
+        }
     }
 
     .sidebar-category{
