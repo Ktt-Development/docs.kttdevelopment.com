@@ -1,2 +1,2 @@
-/*/documentation linguist-documentation
-/dependencies/kttdevelopment -linguist-vendored
+dependencies/kttdevelopment/* -linguist-vendored
+*/documentation/* linguist-documentation
