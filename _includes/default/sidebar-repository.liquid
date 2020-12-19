@@ -10,15 +10,14 @@
 <li class="sidebar-link">
     <a class="d-block pl-4 py-2" href="/{{ ref[0] }}">
         {% for pg in site.pages %}
+            {% comment %}Locate index/readme for repo folder{% endcomment %}
             {% assign pg_ref = pg.path | split: '/' %}
             {% assign size = pg_ref | size %}
             {% if size == 2 and pg_ref[0] == ref[0] %}
                 {% if pg.name == "index.html" or pg.name == "README.md" %}
-                    {% if pg.title %}
-                        {{ pg.title }}
-                    {% else %}
-                        {{ ref[0] | remove: ".html" | remove: ".md" | replace: '-', ' ' }}
-                    {% endif %}
+                    {% assign name = ref[0] %}
+                    {% include function/title.liquid title=pg.title name=name %}
+                    {% break %}
                 {% endif %}
             {% endif %}
         {% endfor %}
@@ -32,19 +31,14 @@
         {% if pg_ref[2] == "index.html" or pg_ref[2] == "README.md" %}
             <li class="sidebar-link{% if pg_ref[1] == cat_ref %} sidebar-category{% endif %}">
                 {% assign link = pg.path | remove: "/index.html" | remove: "/README.md" %}
-                {% if pg.title %}
-                    {% assign title = pg.title %}
-                {% else %}
-                    {% assign title = pg_ref[1] | remove: ".html" | remove: ".md" | replace: '-', ' ' %}
-                {% endif %}
-
+                {% assign name = pg_ref[1] %}
                 {% if pg_ref[1] == cat_ref  %}
                     <details open>
                         <!-- Active Category -->
                         <summary>
                             <div class="d-block d-flex justify-content-between align-items-center">
                                 <a class="d-block pl-4 py-2 mr-3 text-muted" style="flex: auto" href="/{{ link }}">
-                                    {{ title }}
+                                    {% include function/title.liquid title=pg.title name=name %}
                                 </a>
                                 <i class="summary-open text-white fas fa-angle-up fa-fw mx-2"></i>
                                 <i class="summary-closed text-white fas fa-angle-down fa-fw mx-2"></i>
@@ -54,17 +48,14 @@
                         <ul class="pl-0">
                             {% for ipg in site.pages %}
                                 {% assign ipg_ref = ipg.path | split: '/' %}
-                                {% if pg_ref[0] == ref[0] and ipg_ref[1] == ref[1] and ipg_ref[1] != "index.html" and ipg_ref[1] != "README.md" %}
+                                {% comment %}Test that repo, folder match, and is not the index/readme file{% endcomment %}
+                                {% if pg_ref[0] == ref[0] and ipg_ref[1] == ref[1] and ipg_ref[2] != "index.html" and ipg_ref[2] != "README.md" %}
                                     <!-- Page -->
                                     {% assign ilink = ipg.path | remove: ".html" | remove: ".md" %}
-                                    {% if ipg.title %}
-                                        {% assign ititle = ipg.title %}
-                                    {% else %}
-                                        {% assign ititle = ipg_ref[2] | remove: ".html" | remove: ".md" | replace: '-', ' ' %}
-                                    {% endif %}
+                                    {% assign name = ipg_ref[2] %}
                                     <li class="sidebar-link">
                                         <a class="d-block pl-4 py-2" href="/{{ ilink }}">
-                                            {{ ititle }}
+                                            {% include function/title.liquid title=ipg.title name=name %}
                                         </a>
                                     </li>
                                 {% endif %}
@@ -74,7 +65,7 @@
                 {% else %}
                     <!-- Category -->
                     <a class="d-block pl-4 py-2" href="/{{ link }}">
-                        {{ title }}
+                        {% include function/title.liquid title=pg.title name=name %}
                     </a>
                 {% endif %}
             </li>

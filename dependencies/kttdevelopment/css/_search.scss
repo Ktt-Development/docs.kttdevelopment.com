@@ -3,6 +3,25 @@
 
     .search-item{
         transition: all 0.25s ease-in-out !important;
+
+        > a{
+            > h1, > h2, > h3, > h4, > h5, > h6{
+                mark{
+                    padding: 0px;
+                    background-color: transparent;
+                }
+            }
+
+            > p {
+               mark{
+                    padding: 0px;
+                    margin: 0px 2px;
+                    background-color: transparent;
+                    border-bottom: 1px dotted $color-dark;
+                }
+            } 
+        }
+
         &:hover{
             background-color: rgba(0, 123, 255, .1) !important;
         }

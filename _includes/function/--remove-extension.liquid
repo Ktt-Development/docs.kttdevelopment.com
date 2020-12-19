@@ -1,0 +1,12 @@
+{% if include.path contains '.' %}
+    {% assign refs = include.path | split: '.' %}
+    {% for ref in refs %}
+        {% if forloop.last %}
+            {% break %}
+        {% endif %}
+        {% if forloop.first == false %}.{% endif %}
+        {{ ref }}
+    {% endfor %}
+{% else %}
+    {{ include.path }}
+{% endif %}

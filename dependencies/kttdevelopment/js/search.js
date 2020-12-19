@@ -4,17 +4,7 @@ layout: compress
 {% capture newline %}
 {% endcapture %}
 window.pages = {
-    {% for page in site.pages %}
-        {% assign head = page.path | split: '/' %}
-        {% if head[0] != "dependencies" and head[0] != "404.html" and head[0] != "index.html" %}
-            "{{ page.url | slugify | remove: '-html' }}": {
-                "title": "{% if page.title %}{{ page.title | xml_escape | remove: '-html' }}{% else %}{{ page.name | xml_escape | remove: '.html' | remove: '.md' }}{% endif %}",
-                "content": {{ page.content | markdownify | replace: newline, ' ' | strip_html | jsonify }},
-                "url": "{{ site.url | append: page.url | xml_escape | remove: '.html' }}",
-                "path": "{{ page.url | xml_escape | remove: '.html' }}"
-            }{% unless forloop.last %},{% endunless %}
-        {% endif %}
-    {% endfor %}
+    {% include data/pages.liquid %}
 };
 
 var searchIndex = lunr(function() {
@@ -54,11 +44,11 @@ $(document).ready(function(){
             r.content.length > 300
             ? r.content.substring(0, 300) + " ..."
             : r.content;
-        resultsString += "<li class='border-bottom p-2 search-item'>";
+        resultsString += "<li class='border-bottom px-2 py-3 search-item'>";
         resultsString += "<a href='" + r.path +"'>";
         resultsString += "<div class='text-muted small text-capitalize'>" + r.path.split('/').join(" / ").replace('-', ' ') + "</div>";
-        resultsString += "<h5 class='my-1'>" + r.title + "</h5>";
-        resultsString += "<p class='text-body'>";
+        resultsString += "<h5 class='my-1 text-body'>" + r.title.replace(regxp, function(str){return '<mark class="text-primary">' + str + '</mark>';}) + "</h5>";
+        resultsString += "<p class='text-body mb-0'>";
         resultsString += result.replace(regxp, function(str){return '<mark>' + str + '</mark>';});
         resultsString += "</p>";
         resultsString += "</a>";

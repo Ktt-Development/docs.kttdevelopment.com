@@ -1,0 +1,10 @@
+{% for page in site.pages %}
+    {% assign head = page.path | split: '/' %}
+    {% if head[0] != "dependencies" and head[0] != "404.html" and head[0] != "index.html" %}
+        "{{ page.url | slugify | remove: '-html' }}": {
+            "title": "{% include function/--title.liquid title=page.title name=page.name %}",
+            "content": {{ page.content | markdownify | strip_newlines | strip_html | jsonify }},
+            "path": "{{ page.url | xml_escape | remove: '.html' }}"
+        }{% unless forloop.last %},{% endunless %}
+    {% endif %}
+{% endfor %}
