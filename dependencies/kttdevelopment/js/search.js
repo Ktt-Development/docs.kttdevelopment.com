@@ -8,7 +8,7 @@ window.pages = {
         {% assign head = page.path | split: '/' %}
         {% if head[0] != "dependencies" and head[0] != "404.html" and head[0] != "index.html" %}
             "{{ page.url | slugify | remove: '-html' }}": {
-                "title": "{{ page.title | xml_escape | remove: '-html' }}",
+                "title": "{% if page.title %}{{ page.title | xml_escape | remove: '-html' }}{% else %}{{ page.name | xml_escape | remove: '.html' | remove: '.md' }}{% endif %}",
                 "content": {{ page.content | markdownify | replace: newline, ' ' | strip_html | jsonify }},
                 "url": "{{ site.url | append: page.url | xml_escape | remove: '.html' }}",
                 "path": "{{ page.url | xml_escape | remove: '.html' }}"
@@ -57,7 +57,7 @@ $(document).ready(function(){
         resultsString += "<li class='border-bottom p-2 search-item'>";
         resultsString += "<a href='" + r.path +"'>";
         resultsString += "<div class='text-muted small text-capitalize'>" + r.path.split('/').join(" / ").replace('-', ' ') + "</div>";
-        resultsString += "<h6>" + r.title.replace(regxp, function(str){return '<p class="text-primary">' + str + '</p>';}) + "</h6>";
+        resultsString += "<h5 class='my-1'>" + r.title + "</h5>";
         resultsString += "<p class='text-body'>";
         resultsString += result.replace(regxp, function(str){return '<mark>' + str + '</mark>';});
         resultsString += "</p>";

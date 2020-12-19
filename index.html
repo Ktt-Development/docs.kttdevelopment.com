@@ -2,11 +2,16 @@
 ---
 <h4 class="text-center">View Repositories</h4>
 <div class="d-flex flex-wrap mt-3">
-    {% for repo_hash in site.data.navigation %}
-        {% assign repo = repo_hash[1] %}
-        <div class="d-flex flex-column col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-            <a class="btn btn-outline-primary py-3 px-2" href="/{{ repo.link }}">
-            {{ repo.name }}</a>
-        </div>
+    {% for page in site.pages %}
+        {% assign ref = page.path | split: '/' %}
+        {% assign size = ref | size %}
+        {% if size == 2 %}
+            {% if ref[1] == "index.html" or ref[1] == "README.md" %}
+                <div class="d-flex flex-column col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <a class="btn btn-outline-primary py-3 px-2" href="/{{ link }}">
+                    {{ ref[0] | replace: '-', ' ' | capitalize }}</a>
+                </div>
+            {% endif %}
+        {% endif %}
     {% endfor %}
 </div>

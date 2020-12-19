@@ -7,45 +7,77 @@
 </li>
 <!-- Current Repository -->
 {% assign ref = page.path | split:'/' %}
-{% assign nav_ref = ref[0] %}
-{% assign repo = site.data.navigation[nav_ref] %}
 <li class="sidebar-link">
-    <a class="d-block pl-4 py-2" href="{{ repo.link }}" {% if external %}target="_blank"{% endif %}>
-        {{ repo.name }}
+    <a class="d-block pl-4 py-2" href="/{{ ref[0] }}">
+        {% for pg in site.pages %}
+            {% assign pg_ref = pg.path | split: '/' %}
+            {% assign size = pg_ref | size %}
+            {% if size == 2 and pg_ref[0] == ref[0] %}
+                {% if pg.name == "index.html" or pg.name == "README.md" %}
+                    {% if pg.title %}
+                        {{ pg.title }}
+                    {% else %}
+                        {{ ref[0] | remove: ".html" | remove: ".md" | replace: '-', ' ' }}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
     </a>
 </li>
-{% assign cat_ref = ref[1] | prepend: '/' %}
 <!-- Categories -->
-{% for category in repo.categories %}
-<li class="sidebar-link {% if category.link == cat_ref  %}sidebar-category{% endif %}">
-    {% if category.link == cat_ref  %}
-        <details open>
-            <!-- Active Category -->
-            <summary>
-                <div class="d-block d-flex justify-content-between align-items-center">
-                    <a class="d-block pl-4 py-2 mr-3 text-muted" style="flex: auto" href="{{ repo.link }}{{ category.link }}">
-                        {{ category.name }}
+{% assign cat_ref = ref[1] %}
+{% for pg in site.pages %}
+    {% assign pg_ref = pg.path | split: '/' %}
+    {% if pg_ref[0] == ref[0] %}
+        {% if pg_ref[2] == "index.html" or pg_ref[2] == "README.md" %}
+            <li class="sidebar-link{% if pg_ref[1] == cat_ref %} sidebar-category{% endif %}">
+                {% assign link = pg.path | remove: "/index.html" | remove: "/README.md" %}
+                {% if pg.title %}
+                    {% assign title = pg.title %}
+                {% else %}
+                    {% assign title = pg_ref[1] | remove: ".html" | remove: ".md" | replace: '-', ' ' %}
+                {% endif %}
+
+                {% if pg_ref[1] == cat_ref  %}
+                    <details open>
+                        <!-- Active Category -->
+                        <summary>
+                            <div class="d-block d-flex justify-content-between align-items-center">
+                                <a class="d-block pl-4 py-2 mr-3 text-muted" style="flex: auto" href="/{{ link }}">
+                                    {{ title }}
+                                </a>
+                                <i class="summary-open text-white fas fa-angle-up fa-fw mx-2"></i>
+                                <i class="summary-closed text-white fas fa-angle-down fa-fw mx-2"></i>
+                            </div>
+                        </summary>
+                        <!-- Pages -->
+                        <ul class="pl-0">
+                            {% for ipg in site.pages %}
+                                {% assign ipg_ref = ipg.path | split: '/' %}
+                                {% if pg_ref[0] == ref[0] and ipg_ref[1] == ref[1] and ipg_ref[1] != "index.html" and ipg_ref[1] != "README.md" %}
+                                    <!-- Page -->
+                                    {% assign ilink = ipg.path | remove: ".html" | remove: ".md" %}
+                                    {% if ipg.title %}
+                                        {% assign ititle = ipg.title %}
+                                    {% else %}
+                                        {% assign ititle = ipg_ref[2] | remove: ".html" | remove: ".md" | replace: '-', ' ' %}
+                                    {% endif %}
+                                    <li class="sidebar-link">
+                                        <a class="d-block pl-4 py-2" href="/{{ ilink }}">
+                                            {{ ititle }}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </details>
+                {% else %}
+                    <!-- Category -->
+                    <a class="d-block pl-4 py-2" href="/{{ link }}">
+                        {{ title }}
                     </a>
-                    <i class="summary-open text-white fas fa-angle-up fa-fw mx-2"></i>
-                    <i class="summary-closed text-white fas fa-angle-down fa-fw mx-2"></i>
-                </div>
-            </summary>
-            <!-- Pages -->
-            <ul class="pl-0">
-                {% for links in category.links %}
-                    <li class="sidebar-link">
-                        <a class="d-block pl-4 py-2" href="{{ repo.link }}{{ category.link }}{{ links.link }}">
-                            {{ links.name }}
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </details>
-    {% else %}
-        <!-- Category -->
-        <a class="d-block pl-4 py-2" href="{{ repo.link }}{{ category.link }}">
-            {{ category.name }}
-        </a>
+                {% endif %}
+            </li>
+        {% endif %}
     {% endif %}
-</li>
 {% endfor %}

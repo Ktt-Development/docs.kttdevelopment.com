@@ -1,18 +1,19 @@
-{% for repo_hash in site.data.navigation %}
-    <li class="sidebar-link">
-        {% assign repo = repo_hash[1] %}
-        {% assign first = repo.link | slice: 0 %}
-        {% if first != '/' and first != '#' %}
-            {% assign external = true %}
-        {% else %}
-            {% assign external = false %}
+{% for pg in site.pages %}
+    {% assign ref = pg.path | split: '/' %}
+    {% assign size = ref | size %}
+    {% if size == 2 %}
+        {% if ref[1] == "index.html" or ref[1] == "README.md" %}
+            <li class="sidebar-link">
+                {% assign link = ref[0] | remove: ".html" | remove: ".md" %}
+                {% if pg.title %}
+                    {% assign title = pg.title %}
+                {% else %}
+                    {% assign title = ref[0] | remove: ".html" | remove: ".md" | replace: '-', ' ' %}
+                {% endif %}
+                <a class="d-block pl-4 py-2" href="{{ link }}">
+                    {{ title }}
+                </a>
+            </li>
         {% endif %}
-
-        <a class="d-block pl-4 py-2" href="{{ repo.link }}" {% if external %}target="_blank"{% endif %}>
-            {{ repo.name }}
-            {% if external %}
-                <i class="fas fa-external-link-alt"></i>
-            {% endif %}
-        </a>
-    </li>
+    {% endif %}
 {% endfor %}
