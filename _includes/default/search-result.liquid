@@ -1,0 +1,12 @@
+{% comment %}
+Allowed variables are 
+    r.url (SITE URL)
+    r.path (PATH)
+    r.title (TITLE)
+    r.content (CONTENT) /!\ Make sure to substring b/c this is the full page
+    q (QUERY)
+Liquid methods may not be used here, js only
+{% endcomment %}
+<li class="border-bottom p-2">
+    ${r.content.substring(0, 200)}
+</li>

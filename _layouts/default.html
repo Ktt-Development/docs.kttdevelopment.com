@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
     {% include default/_head.liquid %}
-    <body class="d-flex">
+    <body class="d-flex h-100">
         {% include default/sidebar.liquid %}
 
         <main class="w-100">
             {% include default/topbar.liquid %}
-            <div class="container my-4">
+            <div class="container my-4 h-100">
                 {{ content }}
             </div>
             {% include default/footer.liquid %}
         </main>
 
         {% include default/_after.liquid %}
+        {{ page.after }}
     </body>
 </html>

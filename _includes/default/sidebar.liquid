@@ -8,7 +8,7 @@
     </div>
     <!-- Sidebar -->
     <div>
-        {% if page.error or page.path == 'index.html' %}
+        {% if page.error or page.path == 'index.html' or page.path == 'search.html' %}
             <ul class="sidebar-nav pl-0" style="margin-top: 35px;">
                 {% include default/sidebar-homepage.liquid %}
             </ul>

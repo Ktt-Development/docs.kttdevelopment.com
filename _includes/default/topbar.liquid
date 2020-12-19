@@ -1,5 +1,5 @@
 <div class="topnav border-bottom">
-    {% unless page.error %}
+    {% unless page.error or page.link != "search.html" %}
         <div class="container py-2">
             <div class="topnav-search d-flex justify-content-end">
                 {% include default/search.liquid %}
