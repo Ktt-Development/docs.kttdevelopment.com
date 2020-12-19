@@ -1,3 +1,10 @@
 #search-results{
     list-style: none;
+
+    .search-item{
+        transition: all 0.25s ease-in-out !important;
+        &:hover{
+            background-color: rgba(0, 123, 255, .1) !important;
+        }
+    }
 }

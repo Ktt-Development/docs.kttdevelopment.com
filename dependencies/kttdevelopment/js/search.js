@@ -1,13 +1,15 @@
 ---
 layout: compress
 ---
+{% capture newline %}
+{% endcapture %}
 window.pages = {
     {% for page in site.pages %}
         {% assign head = page.path | split: '/' %}
         {% if head[0] != "dependencies" and head[0] != "404.html" and head[0] != "index.html" %}
             "{{ page.url | slugify | remove: '-html' }}": {
                 "title": "{{ page.title | xml_escape | remove: '-html' }}",
-                "content": {{ page.content | markdownify | strip_newlines | strip_html | jsonify }},
+                "content": {{ page.content | markdownify | replace: newline, ' ' | strip_html | jsonify }},
                 "url": "{{ site.url | append: page.url | xml_escape | remove: '.html' }}",
                 "path": "{{ page.url | xml_escape | remove: '.html' }}"
             }{% unless forloop.last %},{% endunless %}
@@ -28,7 +30,6 @@ var searchIndex = lunr(function() {
     }
 });
 
-
 $(document).ready(function(){
     var q;
 
@@ -45,10 +46,23 @@ $(document).ready(function(){
     const results = searchIndex.search(q);
     const resultPages = results.map(function(m){ return pages[m.ref];});
 
+    const regxp = new RegExp(q.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"), 'gmi');
+
     var resultsString = "";
     resultPages.forEach(function(r){
-        {% capture template %}{% include default/search-result.liquid %}{% endcapture %}
-        resultsString += `{{ template | strip_newlines }}`;
+        var result = 
+            r.content.length > 300
+            ? r.content.substring(0, 300) + " ..."
+            : r.content;
+        resultsString += "<li class='border-bottom p-2 search-item'>";
+        resultsString += "<a href='" + r.path +"'>";
+        resultsString += "<div class='text-muted small text-capitalize'>" + r.path.split('/').join(" / ").replace('-', ' ') + "</div>";
+        resultsString += "<h6>" + r.title.replace(regxp, function(str){return '<p class="text-primary">' + str + '</p>';}) + "</h6>";
+        resultsString += "<p class='text-body'>";
+        resultsString += result.replace(regxp, function(str){return '<mark>' + str + '</mark>';});
+        resultsString += "</p>";
+        resultsString += "</a>";
+        resultsString += "</li>";
     });
     
     $("#search-results").html(resultsString);

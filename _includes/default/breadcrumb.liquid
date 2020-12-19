@@ -1,0 +1,16 @@
+{% assign crumbs = page.path | remove: "index.html" | remove: "README.md" | remove: ".html" | remove:".md" | split: '/' %}
+{% assign head = '' %}
+<nav>
+    <ol class="breadcrumb bg-transparent p-0">
+        {% for crumb in crumbs %}
+            <li class="breadcrumb-item text-small{% if forloop.last %} active{% endif %}">
+                {% assign head = head | append: '/' | append: crumb %}
+                {% if include.link %}
+                    <a href="{{ head }}" class="{% if forloop.last %}active{% endif %}">{{ crumb | capitalize }}</a>
+                {% else %}
+                    <p>{{ crumb | capitalize }}</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+</nav>

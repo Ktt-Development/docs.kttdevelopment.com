@@ -31,6 +31,10 @@ a:not(.navbar-brand):not(.text-white):not(.btn){
     }
 }
 
+main.h-100{
+    overflow-y: auto;
+}
+
 code, pre{
     & & > *{
         font-family: 'Fira Code', 'Courier New', Courier, monospace;
@@ -114,18 +118,6 @@ a.anchor{
 #sidebar{
     .sidebar-collapse{
         background-color: #191919;
-    }
-}
-
-// breadcrumb
-
-#breadcrumb{
-    a{
-        margin: 0px;
-        padding: 0px;
-    }
-    small::before{
-        content: "/"
     }
 }
 
