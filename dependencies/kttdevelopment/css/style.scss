@@ -92,35 +92,6 @@ a.anchor{
     }
 }
 
-// sidebar
-
-#left, #right{
-    height: 100vh;
-    overflow-y: auto;
-}
-
-#left{
-    width: 300px;
-    background-color: $color-dark;
-    @extend .min-list;
-
-    p, a:not(:hover){
-        color: white;
-    }
-}
-
-#top{
-    background-color: $color-dark;
-    max-height: 100%;
-    overflow-y: auto;
-}
-
-#sidebar{
-    .sidebar-collapse{
-        background-color: #191919;
-    }
-}
-
 // footer
 .footer{
     color: white;

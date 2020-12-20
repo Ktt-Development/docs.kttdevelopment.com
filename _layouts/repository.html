@@ -1,3 +1,14 @@
 ---
-layout: default
+layout: article
 ---
+<ul>
+    {% assign ref = page.path | split: '/' %}
+    {% for pg in site.pages %}
+        <!-- TODO: fix condition -->
+        {% if true %}
+            <li><a href="{% include function/remove-extension.liquid path=pg.path %}">{% include function/title.liquid title=pg.title name=pg.name %}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+{{ content }}

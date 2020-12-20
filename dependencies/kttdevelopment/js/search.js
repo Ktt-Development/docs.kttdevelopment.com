@@ -48,6 +48,7 @@ $(document).ready(function(){
             : r.content;
         resultsString += "<li class='border-bottom px-2 py-3 search-item'>";
         resultsString += "<a href='" + r.path +"'>";
+        resultsString += r.crumb;
         resultsString += "<h5 class='my-1 text-body'>" + r.title.replace(regxp, function(str){return '<mark class="text-primary">' + str + '</mark>';}) + "</h5>";
         resultsString += "<p class='text-body mb-0'>";
         resultsString += result.replace(regxp, function(str){return '<mark>' + str + '</mark>';});

@@ -4,12 +4,14 @@
         {% assign path = '' %}
         {% for crumb in crumbs %}
             <li class="breadcrumb-item text-small{% if forloop.last and include.link %} active{% endif %}">
+                {% comment %}Find folder readme/index file{% endcomment %}
                 {% if forloop.first == false %}
                     {% assign path = path | append: '/' %}
                 {% endif %}
                 {% assign path = path | append: crumb %}
                 {% assign target = path | append: '/README.md' %}
                 {% assign target_alt = path | append: '/index.html' %}
+                {% comment %}Get title from file or fallback to crumb{% endcomment %}
                 {% if forloop.last == false %}
                     {% for pg in site.pages %}
                         {% if pg.path == target or pg.path == target_alt %}
@@ -22,7 +24,7 @@
                     {% assign link = page.path | prepend: '/' | remove: '/README.md' | remove: '/index.html' %}
                     {% capture title %}{% include function/title.liquid title=page.title name=crumb %}{% endcapture %}
                 {% endif %}
-
+                {% comment %}Actual breadcrumb{% endcomment %}
                 {% assign head = head | append: '/' | append: crumb %}
                 {% if include.link %}
                     <a href="{{ head }}" class="{% if forloop.last %}text-muted{% endif %}">{{ title }}</a>

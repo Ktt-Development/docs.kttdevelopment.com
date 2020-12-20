@@ -36,3 +36,8 @@ compress_html:
   blanklines: false
   profile: false
   startings: []
+
+readme_index:
+  enabled:          true
+  remove_originals: true
+  with_frontmatter: true
