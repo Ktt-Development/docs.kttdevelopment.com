@@ -3,9 +3,9 @@ layout: default
 ---
 <article>
     {% include default/breadcrumb.liquid link=true %}
-
-    <h1 class="my-3">{% include function/title.liquid title=page.title name=page.name %}</h1>
-    <p class="h5 mb-4">page.body</p>
+    {% capture name %}{% include function/file-name.liquid name=page.name path=page.path %}{% endcapture %}
+    <h1 class="my-3">{% include function/title.liquid title=page.title name=name %}</h1>
+    <p class="h5 mb-4">{{ page.body }}</p>
     <hr>
     {{ content }}
 </article>
