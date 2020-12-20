@@ -1,14 +1,33 @@
 {% assign crumbs = page.path | remove: "index.html" | remove: "README.md" | remove: ".html" | remove: ".md" | split: '/' %}
-{% assign head = '' %}
 <nav>
     <ol class="breadcrumb bg-transparent p-0">
+        {% assign path = '' %}
         {% for crumb in crumbs %}
-            <li class="breadcrumb-item text-small{% if forloop.last %} active{% endif %}">
+            <li class="breadcrumb-item text-small{% if forloop.last and include.link %} active{% endif %}">
+                {% if forloop.first == false %}
+                    {% assign path = path | append: '/' %}
+                {% endif %}
+                {% assign path = path | append: crumb %}
+                {% assign target = path | append: '/README.md' %}
+                {% assign target_alt = path | append: '/index.html' %}
+                {% if forloop.last == false %}
+                    {% for pg in site.pages %}
+                        {% if pg.path == target or pg.path == target_alt %}
+                            {% assign link = pg.path | prepend: '/' | remove: '/README.md' | remove: '/index.html' %}
+                            {% capture title %}{% include function/title.liquid title=pg.title name=crumb %}{% endcapture %}
+                            {% break %}
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    {% assign link = page.path | prepend: '/' | remove: '/README.md' | remove: '/index.html' %}
+                    {% capture title %}{% include function/title.liquid title=page.title name=crumb %}{% endcapture %}
+                {% endif %}
+
                 {% assign head = head | append: '/' | append: crumb %}
                 {% if include.link %}
-                    <a href="{{ head }}" class="{% if forloop.last %}active{% endif %}">{{ crumb | capitalize }}</a>
+                    <a href="{{ head }}" class="{% if forloop.last %}text-muted{% endif %}">{{ title }}</a>
                 {% else %}
-                    <p>{{ crumb | capitalize }}</p>
+                    <p class="m-0">{{ title }}</p>
                 {% endif %}
             </li>
         {% endfor %}

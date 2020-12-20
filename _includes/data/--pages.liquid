@@ -4,7 +4,8 @@
         "{{ page.url | slugify | remove: '-html' }}": {
             "title": "{% include function/--title.liquid title=page.title name=page.name %}",
             "content": {{ page.content | markdownify | strip_newlines | strip_html | jsonify }},
-            "path": "{{ page.url | xml_escape | remove: '.html' }}"
+            "path": "{{ page.url | xml_escape | remove: '.html' }}",
+            "crumb": "{% capture crumb %}{% include default/breadcrumb.liquid %}{% endcapture %}{{ crumb | strip_newlines | replace: '"', "'" }}"
         }{% unless forloop.last %},{% endunless %}
     {% endif %}
 {% endfor %}

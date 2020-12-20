@@ -2,6 +2,7 @@
     list-style: none;
 
     .search-item{
+        user-select: none;
         transition: all 0.25s ease-in-out !important;
 
         > a{
@@ -25,5 +26,22 @@
         &:hover{
             background-color: rgba(0, 123, 255, .1) !important;
         }
+
+        .breadcrumb{
+            margin-bottom: 0px;
+
+            p{
+                color: #6c757d;
+                font-size: 80%;
+                font-weight: 400;
+            }
+
+            .breadcrumb-item:before{
+                font-size: 80%;
+                font-weight: 400;
+            }
+
+        }
+
     }
 }

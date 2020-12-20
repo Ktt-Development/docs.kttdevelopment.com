@@ -20,6 +20,8 @@ var searchIndex = lunr(function() {
     }
 });
 
+const noResults = "{% capture result %}{% include default/search-no-results.liquid %}{% endcapture %}{{ result | strip_newlines }}";
+
 $(document).ready(function(){
     var q;
 
@@ -42,11 +44,10 @@ $(document).ready(function(){
     resultPages.forEach(function(r){
         var result = 
             r.content.length > 300
-            ? r.content.substring(0, 300) + " ..."
+            ? r.content.substring(0, 300) + " …"
             : r.content;
         resultsString += "<li class='border-bottom px-2 py-3 search-item'>";
         resultsString += "<a href='" + r.path +"'>";
-        resultsString += "<div class='text-muted small text-capitalize'>" + r.path.split('/').join(" / ").replace('-', ' ') + "</div>";
         resultsString += "<h5 class='my-1 text-body'>" + r.title.replace(regxp, function(str){return '<mark class="text-primary">' + str + '</mark>';}) + "</h5>";
         resultsString += "<p class='text-body mb-0'>";
         resultsString += result.replace(regxp, function(str){return '<mark>' + str + '</mark>';});
@@ -55,5 +56,5 @@ $(document).ready(function(){
         resultsString += "</li>";
     });
     
-    $("#search-results").html(resultsString);
+    $("#search-results").html(resultsString === "" ? noResults : resultsString);
 });
