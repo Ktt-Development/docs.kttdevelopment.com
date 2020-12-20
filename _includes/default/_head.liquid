@@ -1,5 +1,6 @@
 <head>
-    <title>{% if error == 404 %}404 Not Found{% elsif page.title %}{{ page.title }} - Docs{% else %}{{ site.title }}{% endif %}</title>
+    {% capture name %}{% include function/file-name.liquid name=page.name path=page.path %}{% endcapture %}
+    <title>{% include function/title.liquid title=page.title name=name %}{% unless error %} - Docs{% endunless %}</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

@@ -1,0 +1,19 @@
+.markdown{
+
+    h{
+        &1, &2, &3, &4, &5, &6{
+            margin: 1rem 0;
+        }
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    table{
+        th, td {
+            padding: 0 .5rem;
+        }
+    }
+
+}

@@ -1,7 +1,7 @@
 ---
 ---
 
-@import 'global', 'nav', 'search';
+@import 'global', 'nav', 'search', 'markdown';
 
 @font-face{
     font-family: 'Lexend Deca';
@@ -31,10 +31,6 @@ a:not(.navbar-brand):not(.text-white):not(.btn){
     }
 }
 
-main{
-    overflow-y: auto;
-}
-
 code, pre{
     & & > *{
         font-family: 'Fira Code', 'Courier New', Courier, monospace;
@@ -45,50 +41,24 @@ body{
      background-color: $color-white;
 }
 
-img{
-    max-width: 100%;
-}
-
-.min-list{
-    ul, li {
-        list-style-type: none;
-    }
-
-    ul {
-        padding-left: 0px;
-    }
-
-    div > ul > li{
-        padding-left: 0px;
-    }
-
-    li{
-        padding-left: 15px;
-    }
-}
-
-// anchor
-
-a.anchor{
-    font-size: 75%;
-    top: -2.5px;
-    position: relative;
+main{
+    overflow-y: auto;
 }
 
 // content
 
-#toc{
-    @extend .min-list;
+.toc{
+    position: sticky !important;
+    top: 30px;
     font-size: 90%;
-}
 
-#content{
-    > *{
-        margin-top: 10px;
+    ul{
+        padding-left: 0px;
+        list-style: none;
     }
 
-    code{
-        color: $color-red;
+    li > ul {
+        padding-left: 1rem;
     }
 }
 
