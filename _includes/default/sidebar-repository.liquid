@@ -28,11 +28,21 @@
 {% for pg in site.pages %}
     {% assign pg_ref = pg.path | split: '/' %}
     {% if pg_ref[0] == ref[0] %}
-        {% if pg_ref[2] == 'index.html' or pg_ref[2] == 'README.md' %}
+        {% assign size = pg_ref | size %}
+        {% if pg_ref[1] != 'index.html' and pg_ref[1] != 'README.md' and size == 2 %}
+            {% assign file = true %}
+        {% else %} {% comment %}Jekyll is defective, empty is not false for some reason{% endcomment %}
+            {% assign file = false %}
+        {% endif %}
+        {% if pg_ref[2] == 'index.html' or pg_ref[2] == 'README.md' or file %}
             <li class="sidebar-link{% if pg_ref[1] == ref[1] %} sidebar-category{% endif %}">
-                {% assign link = pg.path | remove: "/index.html" | remove: "/README.md" %}
+                {% if file %}
+                    {% capture link %}{% include function/remove-extension.liquid path=pg.path %}{% endcapture %}
+                {% else %}
+                    {% assign link = pg.path | remove: "/index.html" | remove: "/README.md" %}
+                {% endif %}
                 {% assign name = pg_ref[1] %}
-                {% if pg_ref[1] == ref[1] %}
+                {% if pg_ref[1] == ref[1] and file == false %}
                     <details open>
                         <!-- Active Category -->
                         <summary>
