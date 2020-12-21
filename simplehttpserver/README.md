@@ -21,4 +21,4 @@ For projects built locally, compiled binaries can also be found in releases.
 
 The latest documentation is posted online. For specific versions you can download the javadocs from releases.
 
-[Documentation](https://docs.kttdevelopment.com/simplehttpserver)
+[Documentation](/simplehttpserver/documentation)

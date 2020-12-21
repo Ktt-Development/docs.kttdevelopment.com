@@ -4,7 +4,7 @@ The server sent events (SSE) handler allows a constant server to client stream o
 
 # Sending Events
 
-Events can be sent using the [`push`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/handler/SSEHandler.html#push(java.lang.String)) method in the SSE handler.
+Events can be sent using the [`push`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/handler/SSEHandler.html#push(java.lang.String)) method in the SSE handler.
 
 ```java
 SSEHandler handler = new SSEHandler();

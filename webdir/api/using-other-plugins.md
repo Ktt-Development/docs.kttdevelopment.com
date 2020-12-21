@@ -11,7 +11,7 @@ dependencies:
   - someOtherPlugin
 ```
 
-To retrieve the plugin you can use the [`getPlugin`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/WebDirPlugin.html#getPlugin(java.lang.String)) method in your plugin.
+To retrieve the plugin you can use the [`getPlugin`](/webdir/documentation/com/kttdevelopment/webdir/api/WebDirPlugin.html#getPlugin(java.lang.String)) method in your plugin.
 
 ```java
 public class TestPlugin extends WebDirPlugin{

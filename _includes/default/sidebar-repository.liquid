@@ -24,15 +24,15 @@
     </a>
 </li>
 <!-- Categories -->
-{% assign cat_ref = ref[1] %}
+{% assign cat_ref = ref[0] %}
 {% for pg in site.pages %}
     {% assign pg_ref = pg.path | split: '/' %}
     {% if pg_ref[0] == ref[0] %}
-        {% if pg_ref[2] == "index.html" or pg_ref[2] == "README.md" %}
-            <li class="sidebar-link{% if pg_ref[1] == cat_ref %} sidebar-category{% endif %}">
+        {% if pg_ref[2] == 'index.html' or pg_ref[2] == 'README.md' %}
+            <li class="sidebar-link{% if pg_ref[1] == ref[1] %} sidebar-category{% endif %}">
                 {% assign link = pg.path | remove: "/index.html" | remove: "/README.md" %}
                 {% assign name = pg_ref[1] %}
-                {% if pg_ref[1] == cat_ref  %}
+                {% if pg_ref[1] == ref[1] %}
                     <details open>
                         <!-- Active Category -->
                         <summary>
@@ -49,6 +49,7 @@
                             {% for ipg in site.pages %}
                                 {% assign ipg_ref = ipg.path | split: '/' %}
                                 {% comment %}Test that repo, folder match, and is not the index/readme file{% endcomment %}
+                                
                                 {% if pg_ref[0] == ref[0] and ipg_ref[1] == ref[1] and ipg_ref[2] != "index.html" and ipg_ref[2] != "README.md" %}
                                     <!-- Page -->
                                     {% assign ilink = ipg.path | remove: ".html" | remove: ".md" %}

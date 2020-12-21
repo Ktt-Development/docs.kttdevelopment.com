@@ -2,7 +2,7 @@
 
 ## Main Class
 
-The main class for your plugin can be any name, but it must extend [`WebDirPlugin`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/WebDirPlugin.html).
+The main class for your plugin can be any name, but it must extend [`WebDirPlugin`](/webdir/documentation/com/kttdevelopment/webdir/api/WebDirPlugin.html).
 
 
 ```java
@@ -29,7 +29,7 @@ public class Plugin extends WebDirPlugin {
 
 The `plugin.yml` file tells WebDir how to load the plugin and where the main class is. This file must be saved in the top level of the resources folder.
 
-The information from this class can be obtained using the [`getPluginYml`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/WebDirPlugin.html#getPluginYml()) method.
+The information from this class can be obtained using the [`getPluginYml`](/webdir/documentation/com/kttdevelopment/webdir/api/WebDirPlugin.html#getPluginYml()) method.
 
 ```yml
 # The name of the plugin. required
@@ -49,13 +49,13 @@ dependencies:
 
 ## Logger
 
-In order for the plugin to log to files correctly they must use the logger provided in the [`getLogger`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/WebDirPlugin.html#getLogger()) method of the plugin. This logger uses the plugin name when sending messages.
+In order for the plugin to log to files correctly they must use the logger provided in the [`getLogger`](/webdir/documentation/com/kttdevelopment/webdir/api/WebDirPlugin.html#getLogger()) method of the plugin. This logger uses the plugin name when sending messages.
 
 ## Plugin Folder
 
-For plugins that use external files, like configurations and data storage, it is recommended to use the plugin folder provided in the [`getPluginFolder`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/PluginService.html#getPluginFolder()) method in order to avoid conflicting files across plugins.
+For plugins that use external files, like configurations and data storage, it is recommended to use the plugin folder provided in the [`getPluginFolder`](/webdir/documentation/com/kttdevelopment/webdir/api/PluginService.html#getPluginFolder()) method in order to avoid conflicting files across plugins.
 
-This folder is automatically created when the [`getPluginFolder`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/PluginService.html#getPluginFolder()) method is used.
+This folder is automatically created when the [`getPluginFolder`](/webdir/documentation/com/kttdevelopment/webdir/api/PluginService.html#getPluginFolder()) method is used.
 
 # Compiling
 

@@ -22,7 +22,7 @@ The information that the user receives is the information that is writtin to the
 <!-- simple http handler -->
 # A Simple Http Handler
 
-This library simplifies complex operations with a [`SimpleHttpHandler`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpHandler.html); this is similar to the native handler but is uses a [`SimpleHttpExchange`](simple-http-exchange) instead.
+This library simplifies complex operations with a [`SimpleHttpHandler`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpHandler.html); this is similar to the native handler but is uses a [`SimpleHttpExchange`](simple-http-exchange) instead.
 
 ```java
 HttpServer server = HttpServer.create(8080);

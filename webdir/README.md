@@ -16,4 +16,4 @@ Note that [simplehttpserver](https://github.com/Ktt-Development/simplehttpserver
 
 # API Documentation
 
-[Documentation](https://docs.kttdevelopment.com/webdir)
+[Documentation](/webdir/documentation)

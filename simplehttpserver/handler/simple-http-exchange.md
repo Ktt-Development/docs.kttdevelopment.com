@@ -11,12 +11,12 @@ The information that the user receives is the information that is writtin to the
 
 The native exchange recieves data via  [`InputStream`](https://docs.oracle.com/en/java/javase/11/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpExchange.html#getRequestBody())s and sends data using [`OutputStream`](https://docs.oracle.com/en/java/javase/11/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpExchange.html#getResponseBody())s. This means that any `GET` and `POST` requests must be parsed; and that the response must always be written to the steam.
 
-A [`SimpleHttpExchange`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html) simplifies this process.
+A [`SimpleHttpExchange`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html) simplifies this process.
 
 <!-- get -->
 ## `GET` Request
 
-If a user sends a `GET` request the server will return a map of the keys and values for the request. This can be retrieved using the [`getGetMap`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getGetMap()) method in the exchange.
+If a user sends a `GET` request the server will return a map of the keys and values for the request. This can be retrieved using the [`getGetMap`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getGetMap()) method in the exchange.
 
 ```java
 // localhost:8080?exampleKey=exampleValue&anotherKey=anotherValue
@@ -42,7 +42,7 @@ SimpleHttpHandler handler = new SimpleHttpHandler(){
 ## `POST` Request
 
 
-If a user sends a `POST` request the server will return a map of the keys and values for the request. This can be retrieved using the [`getPostMap`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getPostMap()) method in the exchange.
+If a user sends a `POST` request the server will return a map of the keys and values for the request. This can be retrieved using the [`getPostMap`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getPostMap()) method in the exchange.
 
 ```java
 // localhost:8080?exampleKey=exampleValue&anotherKey=anotherValue
@@ -68,9 +68,9 @@ SimpleHttpHandler handler = new SimpleHttpHandler(){
 
 Most post requests to are not as simple as keys and values.
 
-This library adds support to multipart forms as a [`MultipartFormData`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/MultipartFormData.html) object. This can be retrieved using the [`getPostMap`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getMultipartFormData()) method in the exchange.
+This library adds support to multipart forms as a [`MultipartFormData`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/MultipartFormData.html) object. This can be retrieved using the [`getPostMap`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getMultipartFormData()) method in the exchange.
 
-The [`MultipartFormData`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/MultipartFormData.html) is a map of [`Records`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/Recors.html) and [`FileRecords`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/FileRecord.html).
+The [`MultipartFormData`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/MultipartFormData.html) is a map of [`Records`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/Recors.html) and [`FileRecords`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/FileRecord.html).
 
 Note that this feature is experimental.
 
@@ -95,9 +95,9 @@ SimpleHttpHandler handler = new SimpleHttpHandler(){
 <!-- response -->
 ## Response
 
-To send response headers you would set the headers in the [`getResponseHeaders`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getResponseHeaders()) method and send data using [`sendResponseHeaders`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#sendResponseHeaders(int,long)) method. 
+To send response headers you would set the headers in the [`getResponseHeaders`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getResponseHeaders()) method and send data using [`sendResponseHeaders`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#sendResponseHeaders(int,long)) method. 
 
-This process is simplified by using any of the [`send`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#send(java.lang.String)) methods in the exchange.
+This process is simplified by using any of the [`send`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#send(java.lang.String)) methods in the exchange.
 
 The headers are sent with a response code. More information on these codes can be found [here](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml).
 
@@ -106,8 +106,8 @@ The headers are sent with a response code. More information on these codes can b
 <!-- send -->
 ## Sending Data
 
-Data can be sent to the user using any of the [`send`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#send(byte%5B%5D)) methods. The send method can send data using byte arrays, Strings or Files.
+Data can be sent to the user using any of the [`send`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#send(byte%5B%5D)) methods. The send method can send data using byte arrays, Strings or Files.
 
 An optional boolean parameter can be used to compress files into [gzip](https://en.wikipedia.org/wiki/Gzip) files for faster exchanges.
 
-When you are done you must use the [`close`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#close()) method in the exchange.
+When you are done you must use the [`close`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#close()) method in the exchange.

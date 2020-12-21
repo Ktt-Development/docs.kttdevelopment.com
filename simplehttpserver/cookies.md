@@ -4,13 +4,13 @@
 
 ## Get Cookies
 
-To get cookies you use the [`getCookies`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getCookies()) method on the [simple http exchange](/simplehttpserver/handler/simple-http-exchange#A-Simple-Http-Exchange). This returns a hash map with all the keys and values for the cookies that the client has loaded for that server.
+To get cookies you use the [`getCookies`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getCookies()) method on the [simple http exchange](/simplehttpserver/handler/simple-http-exchange#A-Simple-Http-Exchange). This returns a hash map with all the keys and values for the cookies that the client has loaded for that server.
 
 More information on HTTP Cookies can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies).
 
 ## Creating Cookies
 
-To create cookies for the client a [`SimpleHttpCookie.Builder`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpCookie.Builder.html) can be used. Only the key and value are required. Information on the additional parameters can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies).
+To create cookies for the client a [`SimpleHttpCookie.Builder`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpCookie.Builder.html) can be used. Only the key and value are required. Information on the additional parameters can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies).
 
 ```java
 SimpleHttpCookie cookie = new SimpleHttpCookie.Builder("key","value")
@@ -19,7 +19,7 @@ SimpleHttpCookie cookie = new SimpleHttpCookie.Builder("key","value")
 
 ## Setting Cookies
 
-To change cookies that the client has you can use the [`setCookie`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#setCookie(java.lang.String,java.lang.String)) method in the exchange. Cookies are removed by using a blank value. This method accepts both [`SimpleHttpCookie`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpCookie.html) and Strings as parameters.
+To change cookies that the client has you can use the [`setCookie`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#setCookie(java.lang.String,java.lang.String)) method in the exchange. Cookies are removed by using a blank value. This method accepts both [`SimpleHttpCookie`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpCookie.html) and Strings as parameters.
 
 **The exchange must be sent in order for the cookies to change for the client.**
 
