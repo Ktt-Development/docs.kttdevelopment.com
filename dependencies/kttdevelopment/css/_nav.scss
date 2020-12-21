@@ -63,9 +63,20 @@
 }
 
 .topnav{
+
+    .topnav-brand a{
+        color: $color-dark;
+        &:hover{
+            text-decoration: none;
+        }
+    }
     
     .topnav-search form{
         max-width: 400px;
+    }
+
+    ul {
+        list-style: none;
     }
 
 }

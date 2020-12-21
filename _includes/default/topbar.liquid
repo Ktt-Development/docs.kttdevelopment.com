@@ -1,9 +1,38 @@
 <div class="topnav border-bottom">
     {% if page.error == nil and page.path != "search.html" %}
-        <div class="container py-2">
-            <div class="topnav-search d-flex justify-content-end">
+        <div class="container py-2 d-flex justify-content-between justify-content-md-end">
+            <!-- Brand -->
+            <div class="topnav-brand d-flex align-items-center d-block d-md-none">
+                <a href="/">
+                    <img src="/dependencies/kttdevelopment/assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="ktt dev">
+                </a>
+                <a class="pl-2" href="/">Documentation</a>
+            </div>
+            <!-- Search -->
+            <div class="topnav-search">
                 {% include default/search.liquid %}
             </div>
         </div>
     {% endif %}
+    <!-- mobile nav -->
+    <div class="container d-block d-md-none">
+        <ul class="pl-0">
+            {% for pg in site.pages %}
+                {% assign ref = pg.path | split: '/' %}
+                {% assign size = ref | size %}
+                {% if size == 2 %}
+                    {% if ref[1] == "index.html" or ref[1] == "README.md" %}
+                        {% assign name = ref[0] %}
+                        <li class="sidebar-link">
+                            <a 
+                                class="d-block" 
+                                href="/{% include function/remove-extension.liquid path = name %}">
+                                {% include function/title.liquid title=pg.title name=name %}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
 </div>

@@ -20,7 +20,7 @@
     outline: none !important;
 }
 
-a:not(.navbar-brand):not(.text-white):not(.btn){
+a:not(.navbar-brand):not(.topnav-brand a):not(.text-white):not(.btn){
     &, &:hover{
         transition: all 0.25s ease-in-out !important;
         text-decoration: none !important;
