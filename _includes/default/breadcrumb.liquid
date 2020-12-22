@@ -1,6 +1,6 @@
 {% assign crumbs = page.path | remove: "index.html" | remove: "README.md" | remove: ".html" | remove: ".md" | split: '/' %}
 <nav>
-    <ol class="breadcrumb bg-transparent p-0">
+    <ol class="breadcrumb bg-transparent p-0 m-0">
         {% assign path = '' %}
         {% for crumb in crumbs %}
             <li class="breadcrumb-item text-small{% if forloop.last and include.link %} active{% endif %}">

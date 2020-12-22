@@ -1,3 +1,10 @@
+---
+layout: repository
+title: Rexedia
+body: |
+    Rexedia is a command line application that applies metadata and cover art using regular expressions and back references for bulk media files.
+---
+
 # Rexedia Application
 
 Rexedia is a command line application that applies metadata and cover art using regular expressions and back references for bulk media files.
