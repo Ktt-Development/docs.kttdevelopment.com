@@ -24,8 +24,9 @@
     </a>
 </li>
 <!-- Categories -->
+{% assign pages = site.pages | sort: 'name' %}
 {% assign cat_ref = ref[0] %}
-{% for pg in site.pages %}
+{% for pg in pages %}
     {% assign pg_ref = pg.path | split: '/' %}
     {% if pg_ref[0] == ref[0] %}
         {% assign size = pg_ref | size %}
@@ -56,7 +57,7 @@
                         </summary>
                         <!-- Pages -->
                         <ul class="pl-0">
-                            {% for ipg in site.pages %}
+                            {% for ipg in pages %}
                                 {% assign ipg_ref = ipg.path | split: '/' %}
                                 {% comment %}Test that repo, folder match, and is not the index/readme file{% endcomment %}
                                 

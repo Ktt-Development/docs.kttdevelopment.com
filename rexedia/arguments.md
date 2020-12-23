@@ -1,9 +1,37 @@
+---
+title: Arguments
+body: |
+    Rexedia formats using regular expressions and back references based on the parameters provided in the command line.
+---
+
+# Required Arguments
+
+In order to format files Rexedia requires at least one input and a format or preset.
+
+```sh
+rexedia -i video.mp4 -m "title" "(.+)" "$1"
+```
+```sh
+rexedia -i video.mp4 -p "preset.yml"
+```
+
+Note that formats and presets can not be used at the same time. If a preset is specified then the format and output parameters will be ignored.
+
 # Arguments
 **Regular expression will test against the file name without the extension.**
 
-**At least one input required.**
+|Flag|Type|Description|
+|---|---|---|
+|`-i` `-input`|*`file`*|The file or directory path to format. Can be used multiple times.|
+|`-w` `-walk`|*`boolean`*|If true, subdirectories will also be formatted (only for directory input).|
+|`-b` `-backup`|*`boolean`*|If true, input files will be backed up.|
+|`-l` `-logging`|*`boolean`*|If true, log files will be generated.|
+|`-d` `-debug`|*`boolean`*|If true, debug logs will be generated.|
+|`-pc` `preserveCover`|*`boolean`*|If true, files with existing cover art will not get erased unless a new one is specified.|
+|`-pm` `preserveMeta`|*`boolean`*|If true, files will preserve any existing metadata in the final output.|
+|`-p` `-preset`|*`file`*|The preset file path. Overrides cover, metadata, and output flags.|
+|`-c` `-cover`|*`[regex] [string]`* 
 
-**A cover, metadata, or output; or preset must be specified. If a preset is specified then the cover, metadata, and output flags will be ignored.**
 
 - `-i` `-input` *[file]* - File or directory path to format. Can be used multiple times.
 - `-w` `-walk` *[boolean]* - If true, subdirectories will also be formatted.

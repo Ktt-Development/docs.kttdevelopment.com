@@ -1,5 +1,7 @@
 ---
 layout: default
+after: |
+    <script src="/dependencies/kttdevelopment/js/markdown.js"></script>
 ---
 <article>
     {% include default/breadcrumb.liquid link=true %}
@@ -38,7 +40,7 @@ layout: default
         </div>
         {% endif %}
         <!-- content -->
-        <div class="markdown col-12{% if article %} col-xl-9{% endif %} order-3">
+        <div id="markdown" class="markdown col-12{% if article %} col-xl-9{% endif %} order-3">
             {% include import/anchor_headings.html html=content anchorBody='#' %}
         </div>
         <div class="col-12 d-block d-xl-none order-last">
