@@ -1,6 +1,14 @@
-# Http Session 
+---
+title: Http Session
+body : |
+    An Http Session keeps track of a user across multiple exchanges.
+---
+
+# Http Session
 
 **This feature is only compatible with SimpleHttpServer.**
+
+**This feature only works if the user has cookies enabled.**
 
 The server can track user by the address and port given to the exchange, however this doesn't work across multiple tabs or when the user refreshes the page; instead we use a session cookie to track a user across exchanges.
 

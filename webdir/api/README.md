@@ -8,9 +8,9 @@ The main class for your plugin can be any name, but it must extend [`WebDirPlugi
 ```java
 public class Plugin extends WebDirPlugin {
 
-    /*  Do not override this method. 
+    /*  Do not override this method.
 
-        The super method is what allows the plugin to 
+        The super method is what allows the plugin to
         communicate with WebDir.
     */
     public Plugin(PluginService service){

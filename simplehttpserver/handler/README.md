@@ -1,26 +1,11 @@
-# Http Handler
+---
+layout: folder
+title: Handler
+body: |
+    An [`HttpHandler`](https://docs.oracle.com/en/java/javase/11/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpHandler) is what handles a request when a user accesses a page. This is passed with an [http exchange](/simplehttpserver/exchange).
+---
 
-An [`HttpHandler`](https://docs.oracle.com/en/java/javase/11/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpHandler.html) is what handles a request when the user accessing a page. This is passed with an [`HttpExchange`](simple-http-exchange) which contains information about the request.
-
-```java
-HttpServer server = HttpServer.create(8080);
-server.createContext(
-    "/",
-    new HttpHandler(){
-
-        @Override
-        public void handle(HttpExchange httpExchange){
-            // handle the request here
-        }
-
-    }
-);
-```
-
-The information that the user receives is the information that is writtin to the [`OutputStream`](https://docs.oracle.com/en/java/javase/11/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpExchange.html#getResponseBody()) along with any response headers.
-
-<!-- simple http handler -->
-# A Simple Http Handler
+# Simple Http Handler
 
 This library simplifies complex operations with a [`SimpleHttpHandler`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpHandler.html); this is similar to the native handler but is uses a [`SimpleHttpExchange`](simple-http-exchange) instead.
 

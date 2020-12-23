@@ -1,19 +1,13 @@
-# Http Exchange
+---
+title: SimpleHttpExchange
+body: |
+    A simple http exchange simplifies the process of reading and writing to the exchange.
+---
 
-An [`HttpExchange`](https://docs.oracle.com/en/java/javase/11/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpExchange.html) is the client information that a handler is provided with.
-This includes information like where it came from, the user, and any additional information that is sent with the request.
+# SimpleHttpExchange
 
+Most of the methods provided in the [HttpExchange](https://docs.oracle.com/en/java/javase/11/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpExchange.html) are provided in the simple http exchange. All supported and additional fields can be found in the [documentation](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html).
 
-The information that the user receives is the information that is writtin to the [`OutputStream`](https://docs.oracle.com/en/java/javase/11/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpExchange.html#getResponseBody()) along with any response headers.
-
-<!-- simple http exchange -->
-# A Simple Http Exchange
-
-The native exchange recieves data via  [`InputStream`](https://docs.oracle.com/en/java/javase/11/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpExchange.html#getRequestBody())s and sends data using [`OutputStream`](https://docs.oracle.com/en/java/javase/11/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpExchange.html#getResponseBody())s. This means that any `GET` and `POST` requests must be parsed; and that the response must always be written to the steam.
-
-A [`SimpleHttpExchange`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html) simplifies this process.
-
-<!-- get -->
 ## `GET` Request
 
 If a user sends a `GET` request the server will return a map of the keys and values for the request. This can be retrieved using the [`getGetMap`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getGetMap()) method in the exchange.
@@ -38,9 +32,7 @@ SimpleHttpHandler handler = new SimpleHttpHandler(){
 };
 ```
 
-<!-- post -->
 ## `POST` Request
-
 
 If a user sends a `POST` request the server will return a map of the keys and values for the request. This can be retrieved using the [`getPostMap`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getPostMap()) method in the exchange.
 
@@ -92,10 +84,9 @@ SimpleHttpHandler handler = new SimpleHttpHandler(){
 }
 ```
 
-<!-- response -->
 ## Response
 
-To send response headers you would set the headers in the [`getResponseHeaders`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getResponseHeaders()) method and send data using [`sendResponseHeaders`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#sendResponseHeaders(int,long)) method. 
+To send response headers you would set the headers in the [`getResponseHeaders`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#getResponseHeaders()) method and send data using [`sendResponseHeaders`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#sendResponseHeaders(int,long)) method.
 
 This process is simplified by using any of the [`send`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#send(java.lang.String)) methods in the exchange.
 
@@ -103,7 +94,6 @@ The headers are sent with a response code. More information on these codes can b
 
 **If a request does not send headers then the server will retry the handler.**
 
-<!-- send -->
 ## Sending Data
 
 Data can be sent to the user using any of the [`send`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpExchange.html#send(byte%5B%5D)) methods. The send method can send data using byte arrays, Strings or Files.

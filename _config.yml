@@ -21,7 +21,7 @@ defaults:
       path: "*/*"
     values:
       layout: "article"
-      
+
 # Jekyll is defective, documentation files must have front matter manually added
 
 exclude:

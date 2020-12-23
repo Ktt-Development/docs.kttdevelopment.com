@@ -5,8 +5,8 @@
         {% if ref[1] == "index.html" or ref[1] == "README.md" %}
             {% assign name = ref[0] %}
             <li class="sidebar-link">
-                <a 
-                    class="d-block pl-4 py-2" 
+                <a
+                    class="d-block pl-4 py-2"
                     href="/{% include function/remove-extension.liquid path = name %}">
                     {% include function/title.liquid title=pg.title name=name %}
                 </a>

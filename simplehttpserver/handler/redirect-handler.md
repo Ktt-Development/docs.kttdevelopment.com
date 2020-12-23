@@ -1,6 +1,6 @@
 # Redirect Handler
 
-This handler redirects the user to a different page, without saving the redirect url to the history. 
+This handler redirects the user to a different page, without saving the redirect url to the history.
 
 ```java
 HttpServer server = HttpServer.create(8080);

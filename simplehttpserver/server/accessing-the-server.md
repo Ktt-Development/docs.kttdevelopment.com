@@ -17,7 +17,7 @@ The server also broadcasts to all computers on your immediate internet network a
 <!-- public -->
 ## Accessing Outsite My Internet Network
 
-For clients not connected to your network they must use your [*public ip address*](https://www.whatismyip.com/what-is-my-public-ip-address). 
+For clients not connected to your network they must use your [*public ip address*](https://www.whatismyip.com/what-is-my-public-ip-address).
 
 People outside your network can not connect unless you *port forward* the port the server is using. This process varies depending on your ISP and can often leave your network vulnerable to attackers. It is not suggested to this unless you know what you are doing.
 

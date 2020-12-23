@@ -56,7 +56,7 @@ HttpHandler alt404Handler = new HttpHandler(){
 
     @Override
     public void handle(HttpExchange httpExchange){
-        // handle requests with no handler   
+        // handle requests with no handler
     }
 
 };

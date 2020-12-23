@@ -2,14 +2,17 @@
 ---
 <h4 class="text-center">View Repositories</h4>
 <div class="d-flex flex-wrap mt-3">
-    {% for page in site.pages %}
-        {% assign ref = page.path | split: '/' %}
+    {% assign pages = site.pages | sort: 'title' %}
+    {% for pg in pages %}
+        {% assign ref = pg.path | split: '/' %}
         {% assign size = ref | size %}
         {% if size == 2 %}
             {% if ref[1] == "index.html" or ref[1] == "README.md" %}
+                {% assign name = ref[0] %}
                 <div class="d-flex flex-column col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
                     <a class="btn btn-outline-primary py-3 px-2" href="/{{ link }}">
-                    {{ ref[0] | replace: '-', ' ' | capitalize }}</a>
+                        {% include function/title.liquid title=pg.title name=name %}
+                    </a>
                 </div>
             {% endif %}
         {% endif %}

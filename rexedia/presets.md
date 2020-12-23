@@ -5,7 +5,7 @@ body: |
 ---
 # Presets
 
-If a preset is specified as an [argument](arguments.md) then the cover art, metadata, and output fields will be ignored. Only a single preset file can be used.
+If a preset is specified as an [arguments](/rexedia/arguments) then the cover art, metadata, and output fields will be ignored. Only a single preset file can be used.
 
 ```yml
 cover:  # cover art

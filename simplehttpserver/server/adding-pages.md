@@ -5,11 +5,11 @@ Pages (refered to as a context) can be added using [`createContext`](/simplehttp
 ```java
 SimpleHttpServer server = SimpleHttpServer.create(8080);
 
-// this would be accessible at 
+// this would be accessible at
 // localhost:8080/some/web/page
 server.createContext("/some/web/page");
 
-// this would be accessible at 
+// this would be accessible at
 // localhost:8080/some/other/web/page
 server.createContext(
     "/some/other/web/page",

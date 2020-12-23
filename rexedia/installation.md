@@ -1,11 +1,13 @@
 ---
 title: Installation
-body: Setup instructions for Rexedia executable.
+body: |
+    Setup instructions for Rexedia executable.
 ---
 
 # Local Installation
 
-The latest stable release can be found in releases → [![releases](https://img.shields.io/github/v/release/Ktt-Development/rexedia)](https://github.com/Ktt-Development/rexedia/releases)
+The latest stable release can be found in releases →
+[![releases](https://img.shields.io/github/v/release/Ktt-Development/rexedia)](https://github.com/Ktt-Development/rexedia/releases)
 
 Simply run the installer or extract the zip file into the desired directory.
 

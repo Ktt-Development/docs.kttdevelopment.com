@@ -24,7 +24,7 @@
     </a>
 </li>
 <!-- Categories -->
-{% assign pages = site.pages | sort: 'name' %}
+{% assign pages = site.pages | sort: 'title' %}
 {% assign cat_ref = ref[0] %}
 {% for pg in pages %}
     {% assign pg_ref = pg.path | split: '/' %}
@@ -60,7 +60,7 @@
                             {% for ipg in pages %}
                                 {% assign ipg_ref = ipg.path | split: '/' %}
                                 {% comment %}Test that repo, folder match, and is not the index/readme file{% endcomment %}
-                                
+
                                 {% if pg_ref[0] == ref[0] and ipg_ref[1] == ref[1] and ipg_ref[2] != "index.html" and ipg_ref[2] != "README.md" %}
                                     <!-- Page -->
                                     {% assign ilink = ipg.path | remove: ".html" | remove: ".md" %}

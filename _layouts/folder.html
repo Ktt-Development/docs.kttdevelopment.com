@@ -12,7 +12,7 @@ layout: article
             {% assign head = head | append: '/' | append: r %}
         {% endif %}
     {% endfor %}
-    {% assign pages = site.pages | sort: 'name' %}
+    {% assign pages = site.pages | sort: 'title' %}
     {% for pg in pages %}
         {% assign startsWith = pg.path | prepend: '/' | split: head %}
         {% assign size = pg.path | split: '/' | size %}

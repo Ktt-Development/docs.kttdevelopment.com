@@ -42,7 +42,7 @@ $(document).ready(function(){
 
     var resultsString = "";
     resultPages.forEach(function(r){
-        var result = 
+        var result =
             r.content.length > 300
             ? r.content.substring(0, 300) + " …"
             : r.content;
@@ -56,6 +56,6 @@ $(document).ready(function(){
         resultsString += "</a>";
         resultsString += "</li>";
     });
-    
+
     $("#search-results").html(resultsString === "" ? noResults : resultsString);
 });

@@ -36,7 +36,7 @@ bundle.yml
 
 ## Localized Strings
 
-To obtain localized strings from the bundle you use the [`getString`](/webdir/documentation/com/kttdevelopment/webdir/api/LocaleBundle.html#getString(java.lang.String)) method inside the locale bundle. This returns a String in the language that WebDir is currently set to. 
+To obtain localized strings from the bundle you use the [`getString`](/webdir/documentation/com/kttdevelopment/webdir/api/LocaleBundle.html#getString(java.lang.String)) method inside the locale bundle. This returns a String in the language that WebDir is currently set to.
 
 ``` java
 public class Plugin extends WebDirPlugin{
