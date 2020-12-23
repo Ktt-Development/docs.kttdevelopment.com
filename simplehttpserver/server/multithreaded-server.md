@@ -1,3 +1,8 @@
+---
+title: Multithreaded Server
+body: |
+    A standard http server runs on a single thread, meaning that only one user can access the server at a time. This can be changed to allow multiple simultaneous users by setting the server up as multithreaded.
+---
 # Multithreaded Server
 
 By default the server runs on a single thread. This means that only one clients exchange can be processed at a time and can lead to long queues.
@@ -21,7 +26,6 @@ SimpleHttpServer server = SimpleHttpServer.create();
 server.setExecutor(Executors.newCachedThreadPool());
 ```
 
-<!-- help -->
 ## Help: Multithreaded server is not processing requests in parallel.
 
 Requests to the same context may not run in parallel for a user that is accessing the same page more than once. This issue is caused by the browser, where it will not send duplicate requests to the server at the same time.

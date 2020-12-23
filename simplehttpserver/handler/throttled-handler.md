@@ -1,3 +1,8 @@
+---
+title: Throttled Handler
+body: |
+    A [`ThrottledHandler`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/handler/ThrottledHandler.html) limits the amount of simultaneous connections to a handler.
+---
 # Throttled Handler
 
 The throttled handler limits the amount of simultaneous connections to a handler. The handler requires a [`ConnectionThrottler`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/handler/ThrottledHandler.html#%3Cinit%3E(com.sun.net.httpserver.HttpHandler,com.kttdevelopment.simplehttpserver.handler.ConnectionThrottler)), which determines how to allocate the connections.
@@ -87,7 +92,7 @@ The session throttler limits the amount of simultaneous connections a single ses
 
 A value of `0` means no connections allowed and `-1` means unlimited connections allowed.
 
-A [HttpSessionHandler](/simplehttpserver/http-session#http-session-handler) is required in order the handler to retrive sessions from the server. See [HttpSession](/simplehttpserver/http-session) for more details.
+A [HttpSessionHandler](/simplehttpserver/exchange/http-session#http-session-handler) is required in order the handler to retrive sessions from the server. See [HttpSession](/simplehttpserver/exchange/http-session) for more details.
 
 ```java
 HttpHandler handler = new HttpHandler(){
@@ -161,4 +166,4 @@ server.setHttpSessionHandler(sessionHandler);
 server.createContext("/", new ThrottledHandler(handler, throttler));
 ```
 
-[Help: Multithreaded server is not processing requests in parallel.](/simplehttpserver/server/adding/multithreaded-server#Help-Multithreaded-server-is-not-processing-requests-in-parallel)
+[Help: Multithreaded server is not processing requests in parallel.](/simplehttpserver/server/multithreaded-server#help-multithreaded-server-is-not-processing-requests-in-parallel)

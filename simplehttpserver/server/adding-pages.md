@@ -1,3 +1,8 @@
+---
+title: Adding Pages
+body: |
+    In order to add a webpage to the server you must add a [handler](/simplehttpserver/handler) at a specified context.
+---
 # Adding Pages
 
 Pages (refered to as a context) can be added using [`createContext`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpServer.html#createContext(java.lang.String)). This method accepts a String, which is the path that the page will be located at; and an [Http Hander](/simplehttpserver/handler) which handles the request.
@@ -30,4 +35,4 @@ Contexts in a Http Server are acase sensetive and will use the most specific con
 
 This consequently means that any handler added to the root `/` context would handler any requests that don't have a handler, since its the most specific one available.
 
-To resolve this issue the libary provides a [root handler](/simplehttpserver/handler/predicate-handler#root-handler).
+To resolve this issue the libary provides a [root handler](/simplehttpserver/handler/root-handler).

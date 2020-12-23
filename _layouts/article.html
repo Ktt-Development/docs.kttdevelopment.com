@@ -13,41 +13,41 @@ after: |
         <div class="col-12 order-1">
             {% capture name %}{% include function/file-name.liquid name=page.name path=page.path %}{% endcapture %}
             <h1 class="my-3">{% include function/title.liquid title=page.title name=name %}</h1>
-            <div id="body" class="markdown h5 mb-4">{{ page.body | markdownify }}</p>
+            <div id="body" class="markdown h5 mb-4">{{ page.body | markdownify }}</div>
             <hr>
         </div>
         {% comment %}Edit{% endcomment %}
         {% capture edit %}
-        <div class="d-flex justify-content-end">
-            <a class="small" href="https://github.com/Ktt-Development/wiki.kttdevelopment.com/edit/main/{{ page.path }}"
-                                >Edit this page on GitHub
-                <i class="fas fa-pencil-alt"></i>
-            </a>
-        </div>
+            <div class="d-flex justify-content-end">
+                <a class="small" href="https://github.com/Ktt-Development/wiki.kttdevelopment.com/edit/main/{{ page.path }}"
+                                    >Edit this page on GitHub
+                    <i class="fas fa-pencil-alt"></i>
+                </a>
+            </div>
         {% endcapture %}
 
         {% if article %}
-        <!-- TOC -->
-        <div class="col-12 col-xl-3 order-2 order-xl-11">
-            <div class="toc">
-                <p class="mb-0">Contents</p>
-                {% include import/toc.html html=content %}
-                <hr>
-                <div class="d-none d-xl-block">
-                    {{ edit }}
+            <!-- TOC -->
+            <div class="col-12 col-xl-3 order-2 order-xl-11">
+                <div class="toc">
+                    <p class="mb-0">Contents</p>
+                    {% include import/toc.html html=content %}
+                    <hr>
+                    <div class="d-none d-xl-block">
+                        {{ edit }}
+                    </div>
                 </div>
             </div>
-        </div>
         {% endif %}
         <!-- content -->
         <div id="markdown" class="markdown col-12{% if article %} col-xl-9{% endif %} order-3">
             {% include import/anchor_headings.html html=content anchorBody='#' %}
         </div>
-        <div class="col-12 d-block d-xl-none order-last">
+        <div class="col-12 d-block d-xl-none order-11">
             {{ edit }}
         </div>
-    </div>
-    <div class="col-12 px-0 mt-3 order-last">
-        <p class="small">Last updated at {{ site.time | date: "%B %d %Y, %r (EST)" }}</p>
+        <div class="col-12 mt-3 order-12">
+            <p class="small">Last updated at {{ site.time | date: "%B %d %Y, %r (EST)" }}</p>
+        </div>
     </div>
 </article>
