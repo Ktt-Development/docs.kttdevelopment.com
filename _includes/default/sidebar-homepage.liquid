@@ -1,0 +1,17 @@
+{% assign pages = site.pages | sort: 'title' %}
+{% for pg in pages %}
+    {% assign ref = pg.path | split: '/' %}
+    {% assign size = ref | size %}
+    {% if size == 2 %}
+        {% if ref[1] == "index.html" or ref[1] == "README.md" %}
+            {% assign name = ref[0] %}
+            <li class="sidebar-link">
+                <a
+                    class="d-block pl-4 py-2"
+                    href="/{% include function/remove-extension.liquid path = name %}">
+                    {% include function/title.liquid title=pg.title name=name %}
+                </a>
+            </li>
+        {% endif %}
+    {% endif %}
+{% endfor %}

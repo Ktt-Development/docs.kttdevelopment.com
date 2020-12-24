@@ -1,6 +1,11 @@
+---
+title: Localization
+body: |
+    Guide to making a plugin work with multiple languages.
+---
 # Locale
 
-A [`LocaleBundle`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/LocaleBundle.html) is used to add support to multiple languages for the plugin. A locale bundle can be retrieved using the [`getLocaleBundle`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/WebDirPlugin.html#getLocaleBundle(java.lang.String)) method in the plugin.
+A [`LocaleBundle`](/webdir/documentation/com/kttdevelopment/webdir/api/LocaleBundle.html) is used to add support to multiple languages for the plugin. A locale bundle can be retrieved using the [`getLocaleBundle`](/webdir/documentation/com/kttdevelopment/webdir/api/WebDirPlugin.html#getLocaleBundle(java.lang.String)) method in the plugin.
 
 The resource parameter is the name of the locale bundle file without any locale codes.
 
@@ -36,7 +41,7 @@ bundle.yml
 
 ## Localized Strings
 
-To obtain localized strings from the bundle you use the [`getString`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/LocaleBundle.html#getString(java.lang.String)) method inside the locale bundle. This returns a String in the language that WebDir is currently set to. 
+To obtain localized strings from the bundle you use the [`getString`](/webdir/documentation/com/kttdevelopment/webdir/api/LocaleBundle.html#getString(java.lang.String)) method inside the locale bundle. This returns a String in the language that WebDir is currently set to.
 
 ``` java
 public class Plugin extends WebDirPlugin{

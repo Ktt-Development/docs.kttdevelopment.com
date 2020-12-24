@@ -1,0 +1,14 @@
+{% capture newline %}
+{% endcapture %}
+{% for page in site.pages %}
+    {% assign head = page.path | split: '/' %}
+    {% if head[0] != "dependencies" and head[0] != "404.html" and head[1] != "documentation" and head[0] != "sitemap.xml" and head[0] != "search.html" %}
+        {% capture name %}{% include function/file-name.liquid name=page.name path=page.path %}{% endcapture %}
+        "{{ page.url | slugify | remove: '-html' }}": {
+            "title": "{% include function/--title.liquid title=page.title name=name %}",
+            "content": {{ page.content | prepend: newline | prepend: page.body  | markdownify | strip_newlines | strip_html | jsonify }},
+            "path": "{{ page.url | xml_escape | remove: '.html' }}",
+            "crumb": "{% capture crumb %}{% include default/breadcrumb.liquid %}{% endcapture %}{{ crumb | strip_newlines | replace: '"', "'" }}"
+        }{% unless forloop.last %},{% endunless %}
+    {% endif %}
+{% endfor %}

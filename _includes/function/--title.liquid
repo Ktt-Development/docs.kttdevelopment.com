@@ -1,0 +1,7 @@
+{% if include.title %}
+    {{ include.title | strip }}
+{% else %}
+    {% capture name %}{% include function/--remove-extension.liquid path=include.name %}{% endcapture %}
+    {% assign name = name | replace: '-', ' ' %}
+    {% include function/--capitalize.liquid string=name %}
+{% endif %}

@@ -1,0 +1,42 @@
+---
+layout: article
+---
+<!-- folders -->
+<ul>
+    {% assign ref = page.path | split: '/' %}
+    {% assign rsize = ref | size %}
+    {% assign isize = rsize | plus: 1 %}
+    {% assign head = '' %}
+    {% for r in ref %}
+        {% if forloop.last == false %}
+            {% assign head = head | append: '/' | append: r %}
+        {% endif %}
+    {% endfor %}
+    {% assign pages = site.pages | sort: 'title' %}
+    {% for pg in pages %}
+        {% assign startsWith = pg.path | prepend: '/' | split: head %}
+        {% assign size = pg.path | split: '/' | size %}
+        {% assign match = false %}
+        {% if startsWith[0] == '' %}
+            {% if size == rsize and pg.name != 'index.html' and pg.name != 'README.md' %}
+                {% assign name = pg.name %}
+                {% assign path = pg.path %}
+                {% assign match = true %}
+            {% elsif pg.name == 'index.html' or pg.name == 'README.md' %}
+                {% if size == isize %}
+                    {% assign refs = pg.path | split: '/' %}
+                    {% assign before = rsize | minus: 1 %}
+                    {% assign path = pg.path | remove: '/index.html' | remove: '/README.md' %}
+                    {% assign name = refs[before] %}
+                    {% assign match = true %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+        {% if match %}
+            <li><a href="/{% include function/remove-extension.liquid path=path %}">{% include function/title.liquid title=pg.title name=name %}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+<hr>
+
+{{ content }}

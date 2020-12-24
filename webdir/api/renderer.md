@@ -1,6 +1,11 @@
+---
+title: Renderers
+body: |
+    Custom renderers is the primary purpose of WebDir plugins and determine how files will look.
+---
 # Renderer
 
-A [renderer](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/Renderer.html) determines how content will appear based on the template and any previous renderers that may have already ran.
+A [renderer](/webdir/documentation/com/kttdevelopment/webdir/api/Renderer.html) determines how content will appear based on the template and any previous renderers that may have already ran.
 
 ```java
 public class PluginRenderer extends Renderer{
@@ -13,7 +18,7 @@ public class PluginRenderer extends Renderer{
 }
 ```
 
-To add a renderer to your plugin you use the [`addRenderer`](https://docs.kttdevelopment.com/webdir/com/kttdevelopment/webdir/api/WebDirPlugin.html#addRenderer(java.lang.String,com.kttdevelopment.webdir.api.Renderer)) method. A renderer name is required.
+To add a renderer to your plugin you use the [`addRenderer`](/webdir/documentation/com/kttdevelopment/webdir/api/WebDirPlugin.html#addRenderer(java.lang.String,com.kttdevelopment.webdir.api.Renderer)) method. A renderer name is required.
 
 ```java
 public class Plugin extends WebDirPlugin{
@@ -29,7 +34,7 @@ public class Plugin extends WebDirPlugin{
 
 }
 ```
-The renderer can then be accessed by templates in the `renderers` setting in [front matter](/webdir/front-matter).
+The renderer can then be accessed by templates in the `renderers` setting in [front matter](/webdir/files/front-matter).
 
 ```yml
 ---
@@ -66,7 +71,7 @@ public class PluginRenderer extends Renderer{
 }
 ```
 
-This renderer can be used under both the `renderers` and `exchange_renderers` tag, but the server and exchange will only be accesible using [defaults](/webdir/defaults#defaults).
+This renderer can be used under both the `renderers` and `exchange_renderers` tag, but the server and exchange will only be accesible using [defaults](/webdir/configuration/defaults#defaults).
 ```yml
 exchange_renderers:
   - pluginExchangeRenderer
@@ -74,5 +79,5 @@ exchange_renderers:
 
 # File Renderer
 
-For renders using the file explorer, either render can be used but they must be listed under the `exchange_renderers` tag in [defaults](/webdir/defaults#file-defaults) in order to run.
+For renders using the file explorer, either render can be used but they must be listed under the `exchange_renderers` tag in [defaults](/webdir/configuration/defaults#file-defaults) in order to run.
 

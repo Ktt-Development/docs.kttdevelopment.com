@@ -1,9 +1,7 @@
 ---
 ---
 
-$color-dark: #202020;
-$color-white: #F3F2F1;
-$color-red: #e04062;
+@import 'global', 'nav', 'search', 'markdown';
 
 @font-face{
     font-family: 'Lexend Deca';
@@ -22,12 +20,12 @@ $color-red: #e04062;
     outline: none !important;
 }
 
-a:not(.navbar-brand){
+a:not(.navbar-brand):not(.text-white):not(.btn){
     &, &:hover{
         transition: all 0.25s ease-in-out !important;
         text-decoration: none !important;
     }
-    
+
     &:hover{
         color: #0056b3 !important;
     }
@@ -40,94 +38,27 @@ code, pre{
 }
 
 body{
-     //background-color: $color-white;
+     background-color: $color-white;
 }
 
-img{
-    max-width: 100%;
-}
-
-.min-list{
-    ul, li {
-        list-style-type: none;
-    }
-
-    ul {
-        padding-left: 0px;
-    }
-
-    div > ul > li{
-        padding-left: 0px;
-    }
-
-    li{
-        padding-left: 15px;
-    }
-}
-
-// anchor
-
-a.anchor{
-    font-size: 75%;
-    top: -2.5px;
-    position: relative;
+main{
+    overflow-y: auto;
 }
 
 // content
 
-#toc{
-    @extend .min-list;
+.toc{
+    position: sticky !important;
+    top: 30px;
     font-size: 90%;
-}
 
-#content{
-    > *{
-        margin-top: 10px;
+    ul{
+        padding-left: 0px;
+        list-style: none;
     }
 
-    code{
-        color: $color-red;
-    }
-}
-
-// sidebar
-
-#left, #right{
-    height: 100vh;
-    overflow-y: auto;
-}
-
-#left{
-    width: 300px;
-    background-color: $color-dark;
-    @extend .min-list;
-
-    p, a:not(:hover){
-        color: white;
-    }
-}
-
-#top{
-    background-color: $color-dark;
-    max-height: 100%;
-    overflow-y: auto;
-}
-
-#sidebar{
-    .sidebar-collapse{
-        background-color: #191919;
-    }
-}
-
-// breadcrumb
-
-#breadcrumb{
-    a{
-        margin: 0px;
-        padding: 0px;
-    }
-    small::before{
-        content: "/"
+    li > ul {
+        padding-left: 1rem;
     }
 }
 

@@ -1,0 +1,8 @@
+{% if include.name == 'index.html' or include.name == 'README.md' %}
+    {% assign ref = include.path | split: '/' %}
+    {% assign head = '' %}
+    {% assign index = ref | size | minus: 2 %}
+    {{ ref[index] }}
+{% else %}
+    {{ include.name }}
+{% endif %}

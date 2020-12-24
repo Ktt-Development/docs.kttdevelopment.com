@@ -1,8 +1,13 @@
+---
+title: Temporary Handler
+body: |
+    The [`TemporaryHandler`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/handler/TemporaryHandler.html) is a disposable handler that removes itself after a single exchange or after a time limit.
+---
 # Temporary Handler
 
 A temporary handler limits the handler to one exchange. This can be used for single use downloads or image hosting. The handler also accepts an optional time parameter to specify the maximum time the handler can exist for.
 
-You can use the [`getRandomContext`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/SimpleHttpServer.html#getRandomContext()) method on the server to get a random non-conflicting context.
+You can use the [`getRandomContext`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpServer.html#getRandomContext()) method on the server to get a random non-conflicting context.
 
 ```java
 HttpHandler handler = new HttpHandler(){

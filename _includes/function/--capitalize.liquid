@@ -1,0 +1,2 @@
+{% assign words = include.string | split: ' ' %}
+{% for word in words %}{{ word | capitalize }} {% endfor %}

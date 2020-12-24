@@ -1,11 +1,15 @@
+---
+title: File Handler
+body: |
+    The [`FileHandler`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/handler/FileHandler.html) is one of the most complex handlers offered by the simple http server library. This handler allows easy access to files and directories and control over the location and output of these files.
+---
 # File Handler
 
-The file handler is one of the most complex handlers offered by the simple http server library. This handler allows easy access to files and directories and control over the location and output of these files.
+The file handler is used to deploy files or directories to the server. The response that is sent to the user can be modified beforehand using [adapters](#file-handler-adapter).
 
-<!-- adapter -->
 # File Handler Adapter
 
-An adapter can be used to determine what the server will send to the client, and what contexts the files will be hosted at.
+A [`FileHandlerAdapter`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/handler/FileHandlerAdapter.html) can be used to determine what the server will send to the client, and what contexts the files will be hosted at.
 
 ```java
 FileHandlerAdapter adapter = new FileHandlerAdapter(){
@@ -78,7 +82,7 @@ The byte loading option enum parameter determines how files will be stored on th
 |---|---|
 |`PRELOAD`|Reads file when it is added.|
 |`MODLOAD`|Reads file when it is added and any time it is modified.|
-|`CACHELOAD`|Reads file when it is added and clears after a set time. Requires a [`CacheFileAdapter`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/handler/CacheFileAdapter.html).|
+|`CACHELOAD`|Reads file when it is added and clears after a set time. Requires a [`CacheFileAdapter`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/handler/CacheFileAdapter.html).|
 |`LIVELOAD`|Reads the file when it is accessed by the user.|
 
 ```java

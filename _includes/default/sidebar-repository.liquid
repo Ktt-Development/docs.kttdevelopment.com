@@ -1,0 +1,87 @@
+<!-- All Repositories -->
+<li class="sidebar-link mt-2">
+    <a class="d-block small pl-4 py-1" href="/">
+        <i class="fas fa-angle-left fa-fw"></i>
+        All Repositories
+    </a>
+</li>
+<!-- Current Repository -->
+{% assign ref = page.path | split:'/' %}
+<li class="sidebar-link">
+    <a class="d-block pl-4 py-2" href="/{{ ref[0] }}">
+        {% for pg in site.pages %}
+            {% comment %}Locate index/readme for repo folder{% endcomment %}
+            {% assign pg_ref = pg.path | split: '/' %}
+            {% assign size = pg_ref | size %}
+            {% if size == 2 and pg_ref[0] == ref[0] %}
+                {% if pg.name == "index.html" or pg.name == "README.md" %}
+                    {% assign name = ref[0] %}
+                    <i class="fas fa-code-branch fa-fw"></i>
+                    {% include function/title.liquid title=pg.title name=name %}
+                    {% break %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </a>
+</li>
+<!-- Categories -->
+{% assign pages = site.pages | sort: 'title' %}
+{% assign cat_ref = ref[0] %}
+{% for pg in pages %}
+    {% assign pg_ref = pg.path | split: '/' %}
+    {% if pg_ref[0] == ref[0] %}
+        {% assign size = pg_ref | size %}
+        {% if pg_ref[1] != 'index.html' and pg_ref[1] != 'README.md' and size == 2 %}
+            {% assign file = true %}
+        {% else %} {% comment %}Jekyll is defective, empty is not false for some reason{% endcomment %}
+            {% assign file = false %}
+        {% endif %}
+        {% if pg_ref[2] == 'index.html' or pg_ref[2] == 'README.md' or file %}
+            <li class="sidebar-link{% if pg_ref[1] == ref[1] %} sidebar-category{% endif %}">
+                {% if file %}
+                    {% capture link %}{% include function/remove-extension.liquid path=pg.path %}{% endcapture %}
+                {% else %}
+                    {% assign link = pg.path | remove: "/index.html" | remove: "/README.md" %}
+                {% endif %}
+                {% assign name = pg_ref[1] %}
+                {% if pg_ref[1] == ref[1] and file == false %}
+                    <details open>
+                        <!-- Active Category -->
+                        <summary>
+                            <div class="d-block d-flex justify-content-between align-items-center">
+                                <a class="d-block pl-4 py-2 mr-3 text-muted" style="flex: auto" href="/{{ link }}">
+                                    {% include function/title.liquid title=pg.title name=name %}
+                                </a>
+                                <i class="summary-open text-white fas fa-angle-up fa-fw mx-2"></i>
+                                <i class="summary-closed text-white fas fa-angle-down fa-fw mx-2"></i>
+                            </div>
+                        </summary>
+                        <!-- Pages -->
+                        <ul class="pl-0">
+                            {% for ipg in pages %}
+                                {% assign ipg_ref = ipg.path | split: '/' %}
+                                {% comment %}Test that repo, folder match, and is not the index/readme file{% endcomment %}
+
+                                {% if pg_ref[0] == ref[0] and ipg_ref[1] == ref[1] and ipg_ref[2] != "index.html" and ipg_ref[2] != "README.md" %}
+                                    <!-- Page -->
+                                    {% assign ilink = ipg.path | remove: ".html" | remove: ".md" %}
+                                    {% assign name = ipg_ref[2] %}
+                                    <li class="sidebar-link">
+                                        <a class="d-block pl-4 py-2" href="/{{ ilink }}">
+                                            {% include function/title.liquid title=ipg.title name=name %}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </details>
+                {% else %}
+                    <!-- Category -->
+                    <a class="d-block pl-4 py-2" href="/{{ link }}">
+                        {% include function/title.liquid title=pg.title name=name %}
+                    </a>
+                {% endif %}
+            </li>
+        {% endif %}
+    {% endif %}
+{% endfor %}

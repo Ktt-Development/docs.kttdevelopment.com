@@ -1,10 +1,15 @@
+---
+title: SSE Handler
+body: |
+    The [Server Sent Events (SSE) Handler](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/handler/SSEHandler.html) allows the server to communicate with the client without requiring a new exchange.
+---
 # Server Sent Events (SSE) Handler
 
 The server sent events (SSE) handler allows a constant server to client stream of data. More information on SSE can be found [here](https://www.w3schools.com/html/html5_serversentevents.asp).
 
 # Sending Events
 
-Events can be sent using the [`push`](https://docs.kttdevelopment.com/simplehttpserver/com/kttdevelopment/simplehttpserver/handler/SSEHandler.html#push(java.lang.String)) method in the SSE handler.
+Events can be sent using the [`push`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/handler/SSEHandler.html#push(java.lang.String)) method in the SSE handler.
 
 ```java
 SSEHandler handler = new SSEHandler();
