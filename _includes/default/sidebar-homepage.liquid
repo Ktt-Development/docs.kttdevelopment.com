@@ -1,4 +1,5 @@
-{% for pg in site.pages %}
+{% assign pages = site.pages | sort: 'title' %}
+{% for pg in pages %}
     {% assign ref = pg.path | split: '/' %}
     {% assign size = ref | size %}
     {% if size == 2 %}
