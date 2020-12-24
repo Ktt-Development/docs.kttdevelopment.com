@@ -13,7 +13,7 @@ SimpleHttpServer server = SimpleHttpServer.create();
 SimpleHttpsServer hserver = SimpleHttpsServer.create();
 ```
 
-## Binding To A Port
+# Binding To A Port
 
 In order to start the server it must be binded to a port. The port can be binded using an Integer or an [`InetSockedAddress`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/InetSocketAddress.html).
 
@@ -38,7 +38,7 @@ Note that the server can only be binded to a port once. You must create a new se
 
 If the port that the server is currently using is already occupied by another process then a [`BindException`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html) will be thrown.
 
-## Starting The Server
+# Starting The Server
 
 The server can be started using the [`start`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpServer.html#start()) method. The server can not be started unless it is binded to a valid port.
 ```java
@@ -46,7 +46,7 @@ SimpleHttpServer server = SimpleHttpServer.create(8080);
 server.start();
 ```
 
-## Stopping The Server
+# Stopping The Server
 
 The server can be stopped using the [`stop`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpServer.html#stop()) method. This will stop all inbount requests and currently active exchanges. An optional Integer parameter can also be supplied to specify how long to wait for current exchanges to complete before closing the server.
 

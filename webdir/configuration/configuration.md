@@ -1,3 +1,8 @@
+---
+title: Configuration File
+body: |
+    Config options for the site generator.
+---
 # Configuration
 
 ## Safemode
@@ -94,7 +99,7 @@ The 404 page is the default page that wil be used if no page can be found for th
 
 ## Permissions
 
-For public servers [permissions](/webdir/permissions) can be used to deliver different renders to different users.
+For public servers [permissions](/webdir/configuration/permissions) can be used to deliver different renders to different users.
 
 ```yml
 # The file to load permissions from (server only).

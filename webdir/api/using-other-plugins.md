@@ -1,3 +1,9 @@
+---
+title: Using Other Plugins
+body: |
+    Guide to using other WebDir plugins.
+---
+
 # Using Other Plugins
 
 In order for your plugin to use the features of another plugin you must specify it in the [`plugin.yml`](/webdir/api/#plugin.yml) file under `dependencies`.

@@ -16,6 +16,7 @@
             {% if size == 2 and pg_ref[0] == ref[0] %}
                 {% if pg.name == "index.html" or pg.name == "README.md" %}
                     {% assign name = ref[0] %}
+                    <i class="fas fa-code-branch fa-fw"></i>
                     {% include function/title.liquid title=pg.title name=name %}
                     {% break %}
                 {% endif %}

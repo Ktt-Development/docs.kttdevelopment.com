@@ -1,3 +1,8 @@
+---
+title: Front Matter
+body: |
+    Front matter determines how a page will be rendered in the output or server.
+---
 # Front Matter
 
 In order to pass settings to renderers and actually use renderers, source files use yaml front matter. Any settings set in these files will be available to [renderers](/webdir/api/renderer) in the `yamlFrontMatter` parameter.
@@ -17,7 +22,7 @@ renderer:
 
 ## File Renderers
 
-File renderers use [defaults](/webdir/defaults#file-defaults) instead of front matter.
+File renderers use [defaults](/webdir/configuration/defaults#file-defaults) instead of front matter.
 
 # Imports
 

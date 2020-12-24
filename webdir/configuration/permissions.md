@@ -1,6 +1,14 @@
+---
+title: Permissions
+body: |
+    Permissions allows different content to be displayed depending on the user. Does not work with static sites.
+---
+
 # Permissions
 
 Permissions are used to set access to the server and determines which renderers can be used, if the renderer has a required permission.
+
+Permissions and options can set either by user or by group.
 
 ## Options
 
@@ -20,6 +28,7 @@ groups:
 
 The `connection-limit` option determines how many simultaneous sessions a user can have. `0` means no connections allowed and `-1` means unlimited.
 
+All plugins have access to the users options (read only).
 
 ```yml
 groups:
@@ -29,7 +38,7 @@ groups:
       connection-limit: 2
 ```
 
-## Permissions
+## Permissions and Wildcards
 
 Permissions are used to restrict features to certain groups and users. There are two wild cards, `!` for negation and `*` for any. Negation must be the first character to work correctly; the any can be placed anywhere in the string. **Double quotes may be required.**
 
@@ -68,7 +77,7 @@ groups:
 
 The users tag is used to assign groups to users based on their ip address. They can also have there own permissions and options which overrides any group options. Note that negated permissions can **not** be overriden.
 
-For the your user `127.0.0.1` or `localhost` can be used.
+For the local user `127.0.0.1` or `localhost` can be used.
 
 ```yml
 groups:

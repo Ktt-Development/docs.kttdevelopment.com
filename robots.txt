@@ -1,0 +1,10 @@
+User-agent: *
+
+Disallow: /*/documentation
+Disallow: /*/documentation/*
+Disallow: /404
+Disallow: /search*
+Disallow: /dependencies
+Disallow: /dependencies/*
+
+Sitemap: https://docs.kttdevelopment.com/sitemap.xml
