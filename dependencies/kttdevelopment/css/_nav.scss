@@ -37,21 +37,27 @@
             ul {
                 list-style: none;
             }
-
-            i.summary-open, i.summary-closed{
-                display: inline-block;
-            }
+			
+			i, svg{
+				&.summary-open, &.summary-closed{
+					display: inline-block;
+				}
+			}
 
             &[open]{
-                i.summary-closed{
-                    display: none;
-                }
+				i, svg{
+					&.summary-closed{
+						display: none;
+					}
+				}
             }
 
             &:not([open]){
-                i.summary-open{
-                    display: none;
-                }
+                i, svg{
+					&.summary-open{
+						display: none;
+					}
+				}
             }
         }
     }
