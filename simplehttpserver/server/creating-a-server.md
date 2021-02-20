@@ -48,7 +48,7 @@ server.start();
 
 # Stopping The Server
 
-The server can be stopped using the [`stop`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpServer.html#stop()) method. This will stop all inbount requests and currently active exchanges. An optional Integer parameter can also be supplied to specify how long to wait for current exchanges to complete before closing the server.
+The server can be stopped using the [`stop`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpServer.html#stop()) method. This will stop all inbound requests and currently active exchanges. An optional Integer parameter can also be supplied to specify how long to wait for current exchanges to complete before closing the server.
 
 ```java
 SimpleHttpServer server = SimpleHttpServer.create(8080);
