@@ -33,6 +33,6 @@ Contexts in a Http Server are case sensitive and will use the most specific cont
 
 **Example:** If a user goes to `/this/web/page` and there are only handlers for `/this` and `/this/web`, then the handler for `/this/web` would be used because its the most specific context that exists on the server.
 
-This consequently means that any handler added to the root `/` context would handler any requests that don't have a handler, since its the most specific one available.
+This consequently means that any handler added to the root `/` context would handle any requests that don't have a handler, since it's the most specific one available.
 
 To resolve this issue the libary provides a [root handler](/simplehttpserver/handler/root-handler).
