@@ -6,7 +6,7 @@ body: |
 
 # SimpleHttpHandler
 
-This library simplifies complex operations with a [`SimpleHttpHandler`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpHandler.html); this is similar to the native handler but is uses a [`SimpleHttpExchange`](simple-http-exchange) instead.
+This library simplifies complex operations with a [`SimpleHttpHandler`](/simplehttpserver/documentation/com/kttdevelopment/simplehttpserver/SimpleHttpHandler.html); this is similar to the native handler but is uses a [`SimpleHttpExchange`](/simplehttpserver/exchange/simple-http-exchange) instead.
 
 ```java
 HttpServer server = HttpServer.create(8080);
