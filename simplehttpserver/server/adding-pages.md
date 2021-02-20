@@ -29,7 +29,7 @@ server.createContext(
 );
 ```
 
-Contexts in a Http Server are acase sensetive and will use the most specific context available.
+Contexts in a Http Server are case sensitive and will use the most specific context available.
 
 **Example:** If a user goes to `/this/web/page` and there are only handlers for `/this` and `/this/web`, then the handler for `/this/web` would be used because its the most specific context that exists on the server.
 
